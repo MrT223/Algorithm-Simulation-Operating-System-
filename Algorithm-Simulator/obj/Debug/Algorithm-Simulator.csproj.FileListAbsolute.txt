@@ -1,0 +1,12 @@
+C:\Study\HDH\Algorithm-Simulator\Algorithm-Simulator\bin\Debug\Algorithm-Simulator.exe.config
+C:\Study\HDH\Algorithm-Simulator\Algorithm-Simulator\bin\Debug\Algorithm-Simulator.exe
+C:\Study\HDH\Algorithm-Simulator\Algorithm-Simulator\bin\Debug\Algorithm-Simulator.pdb
+C:\Study\HDH\Algorithm-Simulator\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.csproj.AssemblyReference.cache
+C:\Study\HDH\Algorithm-Simulator\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.MainForm.resources
+C:\Study\HDH\Algorithm-Simulator\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.PFSR_Form.resources
+C:\Study\HDH\Algorithm-Simulator\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.Properties.Resources.resources
+C:\Study\HDH\Algorithm-Simulator\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.csproj.GenerateResource.cache
+C:\Study\HDH\Algorithm-Simulator\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.csproj.CoreCompileInputs.cache
+C:\Study\HDH\Algorithm-Simulator\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.exe
+C:\Study\HDH\Algorithm-Simulator\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.pdb
+C:\Study\HDH\Algorithm-Simulator\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.exe.config
