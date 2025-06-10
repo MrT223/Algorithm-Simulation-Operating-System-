@@ -25,5 +25,12 @@ namespace Algorithm_Simulator
             this.Close();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formD formD = new formD();
+            formD.ShowDialog();
+            this.Close();
+        }
     }
 }
