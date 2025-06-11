@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCPU_Distribution = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.PFSR = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,15 +44,16 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnCPU_Distribution
             // 
-            this.button2.BackColor = System.Drawing.Color.Brown;
-            this.button2.Location = new System.Drawing.Point(571, 478);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 142);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCPU_Distribution.BackColor = System.Drawing.Color.Brown;
+            this.btnCPU_Distribution.Location = new System.Drawing.Point(571, 478);
+            this.btnCPU_Distribution.Name = "btnCPU_Distribution";
+            this.btnCPU_Distribution.Size = new System.Drawing.Size(159, 142);
+            this.btnCPU_Distribution.TabIndex = 1;
+            this.btnCPU_Distribution.Text = "CÂU B ĐIỀU PHỐI CPU";
+            this.btnCPU_Distribution.UseVisualStyleBackColor = false;
+            this.btnCPU_Distribution.Click += new System.EventHandler(this.btnCPU_Distribution_Click);
             // 
             // button3
             // 
@@ -83,7 +84,7 @@
             this.ClientSize = new System.Drawing.Size(1577, 687);
             this.Controls.Add(this.PFSR);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnCPU_Distribution);
             this.Controls.Add(this.button1);
             this.Name = "MainForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -95,7 +96,7 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCPU_Distribution;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button PFSR;
     }

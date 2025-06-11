@@ -32,5 +32,12 @@ namespace Algorithm_Simulator
             formD.ShowDialog();
             this.Close();
         }
+
+        private void btnCPU_Distribution_Click(object sender, EventArgs e)
+        {
+            this.Hide();                  // Ẩn MainForm tạm thời
+            FormB formB = new FormB(this);
+            formB.Show();
+        }
     }
 }

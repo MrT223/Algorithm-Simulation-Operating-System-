@@ -22,3 +22,16 @@ E:\2_HCMUE\HK2\Hệ điều hành\pa\Algorithm-Simulator\obj\Debug\Algorithm-Sim
 E:\2_HCMUE\HK2\Hệ điều hành\pa\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.exe
 E:\2_HCMUE\HK2\Hệ điều hành\pa\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.pdb
 E:\2_HCMUE\HK2\Hệ điều hành\pa\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.formD.resources
+C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\bin\Debug\Algorithm-Simulator.exe.config
+C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\bin\Debug\Algorithm-Simulator.exe
+C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\bin\Debug\Algorithm-Simulator.pdb
+C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.csproj.AssemblyReference.cache
+C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.MainForm.resources
+C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.PFSR_Form.resources
+C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.FormB.resources
+C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.formD.resources
+C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.Properties.Resources.resources
+C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.csproj.GenerateResource.cache
+C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.exe
+C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.pdb
