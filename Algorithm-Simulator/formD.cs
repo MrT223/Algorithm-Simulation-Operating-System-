@@ -42,6 +42,8 @@ namespace Algorithm_Simulator
 
         private void btnLoadInput_Click(object sender, EventArgs e)
         {
+            lbInput1.Visible = true;
+            lbInput2.Visible = true;
             txtRequests.Enabled = false;
             txtHead.Enabled = false;
 
@@ -459,6 +461,7 @@ namespace Algorithm_Simulator
 
         private async void btnRunAlgo_Click(object sender, EventArgs e)
         {
+            lbProgress.Visible = true;
             var requests = ParseRequests();
             var head = ParseHead();
 
@@ -483,5 +486,9 @@ namespace Algorithm_Simulator
             }
         }
 
+        private void lbInput2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
