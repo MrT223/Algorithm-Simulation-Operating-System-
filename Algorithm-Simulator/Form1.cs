@@ -25,5 +25,12 @@ namespace Algorithm_Simulator
             this.Close();
         }
 
+        private void btnBanker_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormBanker FormBanker = new FormBanker();
+            FormBanker.ShowDialog();
+            this.Close();
+        }
     }
 }

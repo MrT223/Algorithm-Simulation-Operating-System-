@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBanker = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.PFSR = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,15 +44,16 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnBanker
             // 
-            this.button2.BackColor = System.Drawing.Color.Brown;
-            this.button2.Location = new System.Drawing.Point(571, 478);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 142);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnBanker.BackColor = System.Drawing.Color.Brown;
+            this.btnBanker.Location = new System.Drawing.Point(571, 478);
+            this.btnBanker.Name = "btnBanker";
+            this.btnBanker.Size = new System.Drawing.Size(159, 142);
+            this.btnBanker.TabIndex = 1;
+            this.btnBanker.Text = "Banker";
+            this.btnBanker.UseVisualStyleBackColor = false;
+            this.btnBanker.Click += new System.EventHandler(this.btnBanker_Click);
             // 
             // button3
             // 
@@ -82,7 +83,7 @@
             this.ClientSize = new System.Drawing.Size(1577, 687);
             this.Controls.Add(this.PFSR);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnBanker);
             this.Controls.Add(this.button1);
             this.Name = "MainForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -94,7 +95,7 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBanker;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button PFSR;
     }
