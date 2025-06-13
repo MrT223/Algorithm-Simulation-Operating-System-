@@ -56,16 +56,22 @@
             this.btnMax = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.richWork = new System.Windows.Forms.RichTextBox();
+            this.lblWork = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(668, 9);
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(84, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(258, 31);
-            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Size = new System.Drawing.Size(319, 39);
+            this.lblTitle.TabIndex = 6;
             this.lblTitle.Text = "Banker\'s Algorithm";
             // 
             // lblProcInput
@@ -74,44 +80,44 @@
             this.lblProcInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProcInput.Location = new System.Drawing.Point(12, 77);
             this.lblProcInput.Name = "lblProcInput";
-            this.lblProcInput.Size = new System.Drawing.Size(186, 20);
+            this.lblProcInput.Size = new System.Drawing.Size(129, 20);
             this.lblProcInput.TabIndex = 1;
-            this.lblProcInput.Text = "Nhập số lượng quá trình";
+            this.lblProcInput.Text = "Total processes";
             // 
             // lblResInput
             // 
             this.lblResInput.AutoSize = true;
             this.lblResInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResInput.Location = new System.Drawing.Point(12, 149);
+            this.lblResInput.Location = new System.Drawing.Point(12, 126);
             this.lblResInput.Name = "lblResInput";
-            this.lblResInput.Size = new System.Drawing.Size(197, 20);
+            this.lblResInput.Size = new System.Drawing.Size(162, 20);
             this.lblResInput.TabIndex = 1;
-            this.lblResInput.Text = "Nhập số lượng tài nguyên";
+            this.lblResInput.Text = "Total resource types";
             // 
             // txtNProc
             // 
-            this.txtNProc.Location = new System.Drawing.Point(263, 77);
+            this.txtNProc.Location = new System.Drawing.Point(251, 75);
             this.txtNProc.Name = "txtNProc";
             this.txtNProc.Size = new System.Drawing.Size(120, 22);
-            this.txtNProc.TabIndex = 2;
+            this.txtNProc.TabIndex = 0;
             this.txtNProc.TextChanged += new System.EventHandler(this.txtNProc_TextChanged);
             // 
             // txtNRes
             // 
-            this.txtNRes.Location = new System.Drawing.Point(263, 147);
+            this.txtNRes.Location = new System.Drawing.Point(251, 124);
             this.txtNRes.Name = "txtNRes";
             this.txtNRes.Size = new System.Drawing.Size(120, 22);
-            this.txtNRes.TabIndex = 2;
+            this.txtNRes.TabIndex = 1;
             this.txtNRes.TextChanged += new System.EventHandler(this.txtNRes_TextChanged);
             // 
             // btnContinue
             // 
-            this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContinue.Location = new System.Drawing.Point(412, 109);
+            this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContinue.Location = new System.Drawing.Point(405, 71);
             this.btnContinue.Name = "btnContinue";
-            this.btnContinue.Size = new System.Drawing.Size(133, 33);
+            this.btnContinue.Size = new System.Drawing.Size(123, 32);
             this.btnContinue.TabIndex = 3;
-            this.btnContinue.Text = "Tiếp tục";
+            this.btnContinue.Text = "Continue";
             this.btnContinue.UseVisualStyleBackColor = true;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
@@ -119,15 +125,16 @@
             // 
             this.lblAlloc.AutoSize = true;
             this.lblAlloc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlloc.Location = new System.Drawing.Point(31, 228);
+            this.lblAlloc.Location = new System.Drawing.Point(5, 172);
             this.lblAlloc.Name = "lblAlloc";
-            this.lblAlloc.Size = new System.Drawing.Size(139, 20);
+            this.lblAlloc.Size = new System.Drawing.Size(133, 20);
             this.lblAlloc.TabIndex = 1;
-            this.lblAlloc.Text = "Ma trận cung cấp";
+            this.lblAlloc.Text = "Allocation matrix";
             // 
             // richAlloc
             // 
-            this.richAlloc.Location = new System.Drawing.Point(229, 228);
+            this.richAlloc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richAlloc.Location = new System.Drawing.Point(10, 58);
             this.richAlloc.Name = "richAlloc";
             this.richAlloc.Size = new System.Drawing.Size(279, 182);
             this.richAlloc.TabIndex = 4;
@@ -135,19 +142,21 @@
             // 
             // btnAlloc
             // 
-            this.btnAlloc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlloc.Location = new System.Drawing.Point(35, 338);
+            this.btnAlloc.Enabled = false;
+            this.btnAlloc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlloc.Location = new System.Drawing.Point(202, 190);
             this.btnAlloc.Name = "btnAlloc";
             this.btnAlloc.Size = new System.Drawing.Size(109, 31);
             this.btnAlloc.TabIndex = 5;
-            this.btnAlloc.Text = "Thêm hàng";
+            this.btnAlloc.Text = "Add row";
             this.btnAlloc.UseVisualStyleBackColor = true;
             this.btnAlloc.Click += new System.EventHandler(this.btnAlloc_Click);
             // 
             // txtAlloc
             // 
+            this.txtAlloc.Enabled = false;
             this.txtAlloc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAlloc.Location = new System.Drawing.Point(16, 275);
+            this.txtAlloc.Location = new System.Drawing.Point(9, 195);
             this.txtAlloc.Name = "txtAlloc";
             this.txtAlloc.Size = new System.Drawing.Size(154, 26);
             this.txtAlloc.TabIndex = 2;
@@ -156,51 +165,54 @@
             // 
             this.lblMax.AutoSize = true;
             this.lblMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMax.Location = new System.Drawing.Point(553, 228);
+            this.lblMax.Location = new System.Drawing.Point(5, 237);
             this.lblMax.Name = "lblMax";
-            this.lblMax.Size = new System.Drawing.Size(135, 20);
+            this.lblMax.Size = new System.Drawing.Size(91, 20);
             this.lblMax.TabIndex = 1;
-            this.lblMax.Text = "Ma trận cần thiết";
+            this.lblMax.Text = "Max matrix";
             // 
             // richMax
             // 
-            this.richMax.Location = new System.Drawing.Point(740, 228);
+            this.richMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richMax.Location = new System.Drawing.Point(321, 58);
             this.richMax.Name = "richMax";
             this.richMax.Size = new System.Drawing.Size(279, 182);
-            this.richMax.TabIndex = 4;
+            this.richMax.TabIndex = 1;
             this.richMax.Text = "";
             // 
             // lblAvail
             // 
             this.lblAvail.AutoSize = true;
             this.lblAvail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvail.Location = new System.Drawing.Point(1059, 228);
+            this.lblAvail.Location = new System.Drawing.Point(5, 302);
             this.lblAvail.Name = "lblAvail";
-            this.lblAvail.Size = new System.Drawing.Size(138, 20);
+            this.lblAvail.Size = new System.Drawing.Size(127, 20);
             this.lblAvail.TabIndex = 1;
-            this.lblAvail.Text = "Ma trận khả dụng";
+            this.lblAvail.Text = "Available matrix";
             // 
             // txtAvail
             // 
+            this.txtAvail.Enabled = false;
             this.txtAvail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAvail.Location = new System.Drawing.Point(1224, 225);
+            this.txtAvail.Location = new System.Drawing.Point(9, 325);
             this.txtAvail.Name = "txtAvail";
             this.txtAvail.Size = new System.Drawing.Size(181, 26);
-            this.txtAvail.TabIndex = 2;
+            this.txtAvail.TabIndex = 4;
             // 
             // lblNeed
             // 
             this.lblNeed.AutoSize = true;
             this.lblNeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNeed.Location = new System.Drawing.Point(31, 439);
+            this.lblNeed.Location = new System.Drawing.Point(6, 479);
             this.lblNeed.Name = "lblNeed";
-            this.lblNeed.Size = new System.Drawing.Size(130, 20);
+            this.lblNeed.Size = new System.Drawing.Size(99, 20);
             this.lblNeed.TabIndex = 1;
-            this.lblNeed.Text = "Ma trận còn cần";
+            this.lblNeed.Text = "Need matrix";
             // 
             // richNeed
             // 
-            this.richNeed.Location = new System.Drawing.Point(16, 476);
+            this.richNeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richNeed.Location = new System.Drawing.Point(10, 502);
             this.richNeed.Name = "richNeed";
             this.richNeed.Size = new System.Drawing.Size(455, 199);
             this.richNeed.TabIndex = 4;
@@ -210,30 +222,31 @@
             // 
             this.lblOutput.AutoSize = true;
             this.lblOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutput.Location = new System.Drawing.Point(572, 439);
+            this.lblOutput.Location = new System.Drawing.Point(505, 479);
             this.lblOutput.Name = "lblOutput";
-            this.lblOutput.Size = new System.Drawing.Size(66, 20);
-            this.lblOutput.TabIndex = 1;
-            this.lblOutput.Text = "Kết quả";
+            this.lblOutput.Size = new System.Drawing.Size(59, 20);
+            this.lblOutput.TabIndex = 6;
+            this.lblOutput.Text = "Output";
             // 
             // richOutput
             // 
-            this.richOutput.Location = new System.Drawing.Point(557, 476);
+            this.richOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richOutput.Location = new System.Drawing.Point(509, 502);
             this.richOutput.Name = "richOutput";
             this.richOutput.Size = new System.Drawing.Size(331, 199);
-            this.richOutput.TabIndex = 4;
+            this.richOutput.TabIndex = 7;
             this.richOutput.Text = "";
             // 
             // radiobtnSafe
             // 
             this.radiobtnSafe.AutoSize = true;
             this.radiobtnSafe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radiobtnSafe.Location = new System.Drawing.Point(1063, 435);
+            this.radiobtnSafe.Location = new System.Drawing.Point(29, 419);
             this.radiobtnSafe.Name = "radiobtnSafe";
-            this.radiobtnSafe.Size = new System.Drawing.Size(165, 24);
+            this.radiobtnSafe.Size = new System.Drawing.Size(113, 24);
             this.radiobtnSafe.TabIndex = 6;
             this.radiobtnSafe.TabStop = true;
-            this.radiobtnSafe.Text = "Trạng thái an toàn";
+            this.radiobtnSafe.Text = "Safe check";
             this.radiobtnSafe.UseVisualStyleBackColor = true;
             this.radiobtnSafe.CheckedChanged += new System.EventHandler(this.radiobtnSafe_CheckedChanged);
             // 
@@ -241,12 +254,12 @@
             // 
             this.radiobtnRequest.AutoSize = true;
             this.radiobtnRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radiobtnRequest.Location = new System.Drawing.Point(1304, 435);
+            this.radiobtnRequest.Location = new System.Drawing.Point(270, 419);
             this.radiobtnRequest.Name = "radiobtnRequest";
-            this.radiobtnRequest.Size = new System.Drawing.Size(90, 24);
+            this.radiobtnRequest.Size = new System.Drawing.Size(92, 24);
             this.radiobtnRequest.TabIndex = 6;
             this.radiobtnRequest.TabStop = true;
-            this.radiobtnRequest.Text = "Yêu cầu";
+            this.radiobtnRequest.Text = "Request";
             this.radiobtnRequest.UseVisualStyleBackColor = true;
             this.radiobtnRequest.CheckedChanged += new System.EventHandler(this.radiobtnRequest_CheckedChanged);
             // 
@@ -254,93 +267,156 @@
             // 
             this.lblProcReq.AutoSize = true;
             this.lblProcReq.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProcReq.Location = new System.Drawing.Point(1059, 492);
+            this.lblProcReq.Location = new System.Drawing.Point(25, 476);
             this.lblProcReq.Name = "lblProcReq";
-            this.lblProcReq.Size = new System.Drawing.Size(141, 20);
+            this.lblProcReq.Size = new System.Drawing.Size(136, 20);
             this.lblProcReq.TabIndex = 1;
-            this.lblProcReq.Text = "Quá trình yêu cầu";
+            this.lblProcReq.Text = "Request process";
+            this.lblProcReq.Visible = false;
             // 
             // lblResReq
             // 
             this.lblResReq.AutoSize = true;
             this.lblResReq.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResReq.Location = new System.Drawing.Point(1059, 558);
+            this.lblResReq.Location = new System.Drawing.Point(25, 542);
             this.lblResReq.Name = "lblResReq";
-            this.lblResReq.Size = new System.Drawing.Size(153, 20);
+            this.lblResReq.Size = new System.Drawing.Size(151, 20);
             this.lblResReq.TabIndex = 1;
-            this.lblResReq.Text = "Tài nguyên yêu cầu";
+            this.lblResReq.Text = "Request resources";
+            this.lblResReq.Visible = false;
             // 
             // txtProcReq
             // 
-            this.txtProcReq.Location = new System.Drawing.Point(1304, 490);
+            this.txtProcReq.Location = new System.Drawing.Point(270, 474);
             this.txtProcReq.Name = "txtProcReq";
             this.txtProcReq.Size = new System.Drawing.Size(181, 22);
             this.txtProcReq.TabIndex = 2;
+            this.txtProcReq.Visible = false;
             // 
             // txtResReq
             // 
             this.txtResReq.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResReq.Location = new System.Drawing.Point(1304, 552);
+            this.txtResReq.Location = new System.Drawing.Point(270, 536);
             this.txtResReq.Name = "txtResReq";
             this.txtResReq.Size = new System.Drawing.Size(181, 26);
             this.txtResReq.TabIndex = 2;
+            this.txtResReq.Visible = false;
             // 
             // txtMax
             // 
+            this.txtMax.Enabled = false;
             this.txtMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMax.Location = new System.Drawing.Point(534, 275);
+            this.txtMax.Location = new System.Drawing.Point(9, 260);
             this.txtMax.Name = "txtMax";
             this.txtMax.Size = new System.Drawing.Size(154, 26);
-            this.txtMax.TabIndex = 2;
+            this.txtMax.TabIndex = 3;
             // 
             // btnMax
             // 
-            this.btnMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMax.Location = new System.Drawing.Point(557, 338);
+            this.btnMax.Enabled = false;
+            this.btnMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMax.Location = new System.Drawing.Point(202, 255);
             this.btnMax.Name = "btnMax";
             this.btnMax.Size = new System.Drawing.Size(109, 31);
             this.btnMax.TabIndex = 5;
-            this.btnMax.Text = "Thêm hàng";
+            this.btnMax.Text = "Add row";
             this.btnMax.UseVisualStyleBackColor = true;
             this.btnMax.Click += new System.EventHandler(this.btnMax_Click);
             // 
             // btnCheck
             // 
             this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheck.Location = new System.Drawing.Point(1063, 614);
+            this.btnCheck.Location = new System.Drawing.Point(29, 598);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(134, 49);
             this.btnCheck.TabIndex = 5;
-            this.btnCheck.Text = "Kiểm tra";
+            this.btnCheck.Text = "Check";
             this.btnCheck.UseVisualStyleBackColor = true;
             this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(1304, 614);
+            this.btnClear.Location = new System.Drawing.Point(286, 598);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(134, 49);
             this.btnClear.TabIndex = 5;
-            this.btnClear.Text = "Làm mới";
+            this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.richMax);
+            this.groupBox1.Controls.Add(this.richWork);
+            this.groupBox1.Controls.Add(this.richAlloc);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblWork);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.richNeed);
+            this.groupBox1.Controls.Add(this.lblNeed);
+            this.groupBox1.Controls.Add(this.richOutput);
+            this.groupBox1.Controls.Add(this.lblOutput);
+            this.groupBox1.Location = new System.Drawing.Point(636, -26);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(940, 713);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ma trận";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Allocation matrix";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(317, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Max matrix";
+            // 
+            // richWork
+            // 
+            this.richWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richWork.Location = new System.Drawing.Point(10, 276);
+            this.richWork.Name = "richWork";
+            this.richWork.Size = new System.Drawing.Size(590, 182);
+            this.richWork.TabIndex = 4;
+            this.richWork.Text = "";
+            // 
+            // lblWork
+            // 
+            this.lblWork.AutoSize = true;
+            this.lblWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWork.Location = new System.Drawing.Point(6, 253);
+            this.lblWork.Name = "lblWork";
+            this.lblWork.Size = new System.Drawing.Size(99, 20);
+            this.lblWork.TabIndex = 1;
+            this.lblWork.Text = "Work matrix";
             // 
             // FormBanker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1577, 687);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.radiobtnRequest);
+            this.Controls.Add(this.lblMax);
+            this.Controls.Add(this.lblAlloc);
             this.Controls.Add(this.radiobtnSafe);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.btnMax);
             this.Controls.Add(this.btnAlloc);
-            this.Controls.Add(this.richMax);
-            this.Controls.Add(this.richOutput);
-            this.Controls.Add(this.richNeed);
-            this.Controls.Add(this.richAlloc);
             this.Controls.Add(this.txtResReq);
             this.Controls.Add(this.txtAvail);
             this.Controls.Add(this.btnContinue);
@@ -348,20 +424,18 @@
             this.Controls.Add(this.txtAlloc);
             this.Controls.Add(this.lblAvail);
             this.Controls.Add(this.txtNRes);
-            this.Controls.Add(this.lblMax);
-            this.Controls.Add(this.lblOutput);
             this.Controls.Add(this.txtProcReq);
             this.Controls.Add(this.txtNProc);
             this.Controls.Add(this.lblResReq);
             this.Controls.Add(this.lblProcReq);
-            this.Controls.Add(this.lblNeed);
-            this.Controls.Add(this.lblAlloc);
             this.Controls.Add(this.lblResInput);
             this.Controls.Add(this.lblProcInput);
             this.Controls.Add(this.lblTitle);
             this.Name = "FormBanker";
             this.Text = "FormBanker";
             this.Load += new System.EventHandler(this.FormBanker_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,5 +471,10 @@
         private System.Windows.Forms.Button btnMax;
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RichTextBox richWork;
+        private System.Windows.Forms.Label lblWork;
     }
 }

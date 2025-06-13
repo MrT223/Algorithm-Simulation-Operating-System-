@@ -15,9 +15,9 @@ namespace Algorithm_Simulator
     struct process
     {
         public int id;
-        public List<int> Max;            // 2D array Max[i,1] = k, means pi need max k instances of resource 1
-        public List<int> Allocation; // 2D array Allocation[i,1] = k, means pi has k instances of resource 1
-        public List<int> Need;           // 2D array Need[i,1] = k, means pi need k instances of resource 1 to start exec
+        public List<int> Max;        
+        public List<int> Allocation;
+        public List<int> Need;         
     };
 
 
@@ -26,7 +26,7 @@ namespace Algorithm_Simulator
         static int nprocesses, nresources;
         int count_alloc = 0, count_max = 0;
         List<int> seq = new List<int>();
-        int[] available;              // num of instances for each resource
+        int[] available;            
         List<process> processes = new List<process>();
         List<int> req = new List<int>();
         int choice = 1;
@@ -48,6 +48,8 @@ namespace Algorithm_Simulator
             lblResReq.Visible = false;
             txtProcReq.Visible = false;
             txtResReq.Visible = false;
+            txtProcReq.Clear();
+            txtResReq.Clear();
         }
 
         private void radiobtnRequest_CheckedChanged(object sender, EventArgs e)
@@ -62,129 +64,153 @@ namespace Algorithm_Simulator
         private void btnCheck_Click(object sender, EventArgs e)
         {
             state = new bool[nprocesses];
+            processes = new List<process>();
+
+            available = Array.ConvertAll(txtAvail.Text.Split(' '), int.Parse);
+
             for (int i = 0; i < nprocesses; i++)
             {
                 process p = new process();
-
                 p.id = i;
-                p.Allocation = Allocation[i].ToList<int>();
-                p.Max = Max[i].ToList<int>();
+                p.Allocation = Allocation[i].ToList();
+                p.Max = Max[i].ToList();
                 p.Need = new List<int>();
+
                 for (int j = 0; j < nresources; j++)
                 {
                     p.Need.Add(p.Max[j] - p.Allocation[j]);
                 }
                 processes.Add(p);
                 state[i] = false;
+            }
 
-                available = Array.ConvertAll(txtAvail.Text.Split(' '), int.Parse);
-
-                // print Need matrix
-                richNeed.Clear();
-                string n = "";
-                for (int j = -1; j < nprocesses; j++)
+            richNeed.Clear();
+            string n = "";
+            n += "  \t";
+            for (int a = 0; a < nresources; a++)
+                n += "R" + a + "\t";
+            richNeed.AppendText(n + "\n");
+            
+            for (int j = 0; j < nprocesses; j++)
+            {
+                n = "P" + j + "\t";
+                for (int a = 0; a < nresources; a++)
                 {
-                    n = "";
-                    if (j == -1)
-                    {
-                        n += "  \t";
-                        for (int a = 0; a < nresources; a++)
-                        {
-                            n += "R" + a + "\t";
-                        }
-                        richNeed.AppendText(n + "\n");
-                        continue;
-                    }
-                    n += "P" + j + "\t";
-                    for (int a = 0; a < nresources; a++)
-                        n += processes[j].Need[a] + "\t";
-                    richNeed.AppendText(n + "\n");
-
+                    n += processes[j].Need[a] + "\t";
                 }
-                string s = "";
-                if (choice == 1)
-                {
-                    if (IsSafe(processes, available))
-                    {
-                        s = "Yes , Safe state <";
-                        for (int a = 0; a < nprocesses; a++)
-                        {
+                richNeed.AppendText(n + "\n");
+            }
 
-                            s = s + "P" + seq[a];
-                            if (a != nprocesses - 1) s += ",";
-                            else s += ">";
-                        }
-                        richOutput.AppendText(s + "\n");
+            string s = "";
+            if (choice == 1)
+            {
+                List<string> explanation;
+                if (IsSafe(processes, available, out explanation))
+                {
+                    s = "Yes , Safe state <";
+                    for (int a = 0; a < nprocesses; a++)
+                    {
+                        s = s + "P" + seq[a];
+                        if (a != nprocesses - 1) s += ",";
+                        else s += ">";
                     }
-                    else richOutput.AppendText("No\n");
                 }
                 else
                 {
-                    int pp = 0;
-                    s = "";
-                    pp = int.Parse(txtProcReq.Text);
-                    req = Array.ConvertAll(txtResReq.Text.Split(' '), int.Parse).ToList<int>();
-
-                    if (Request(processes, available, pp, req))
-                    {
-                        s += "Yes , Safe state <";
-                        s += "P" + pp + "req,";
-                        for (int a = 0; a < nprocesses; a++)
-                        {
-                            s += "P" + seq[a];
-                            /*
-                            if(seq[i]==p) cout<<"P"<<seq[i]<<"req";
-                            else  cout<<"P"<<seq[i];
-                            */
-                            if (a != nprocesses - 1) s += ",";
-                            else s += ">";
-                        }
-                    }
-                    else
-                    {
-                        s += "No";
-                    }
-                    richOutput.AppendText(s + "\n");
+                    s = "No";
                 }
+
+                richWork.Clear();
+                foreach (string step in explanation)
+                    richWork.AppendText(step + "\n");
+
+                richOutput.AppendText(s + "\n");
+            }
+            else
+            {
+                int pp = int.Parse(txtProcReq.Text);
+                req = Array.ConvertAll(txtResReq.Text.Split(' '), int.Parse).ToList<int>();
+
+                List<string> explanation; 
+                if (Request(processes, available, pp, req, out explanation))
+                {
+                    s = "Yes , Safe state <";
+                    s += "P" + pp + "req,";
+                    for (int a = 0; a < nprocesses; a++)
+                    {
+                        s += "P" + seq[a];
+                        if (a != nprocesses - 1) s += ",";
+                        else s += ">";
+                    }
+                }
+                else
+                {
+                    s = "No";
+                }
+
+                richWork.Clear();
+                foreach (string step in explanation)
+                {
+                    richWork.AppendText(step + "\n");
+                }
+                richOutput.AppendText(s + "\n");
             }
         }
 
-        private bool IsSafe(List<process> processes, int[] available)
+        private bool IsSafe(List<process> processes, int[] available, out List<string> explanation)
         {
-
+            explanation = new List<string>();
             int finished = nprocesses;
-            int j = 0;
+            int[] Work = (int[])available.Clone();
+            bool[] localState = new bool[nprocesses];
+            seq = new List<int>();
+
+            explanation.Add("Initial Work: " + string.Join(" ", Work));
+
             while (finished != 0)
             {
                 int counter = finished;
                 foreach (var i in processes)
                 {
-                    if (state[i.id] == false)
+                    if (!localState[i.id])
                     {
-                        for (j = 0; j < nresources; j++)
-                            if (i.Need[j] > available[j]) break;
-                        if (j == nresources)
+                        bool canExecute = true;
+                        for (int j = 0; j < nresources; j++)
                         {
-                            finished--;
-                            //processes[i.id].status = true;
-                            state[i.id] = true;
+                            if (i.Need[j] > Work[j])
+                            {
+                                canExecute = false;
+                                break;
+                            }
+                        }
+
+                        if (canExecute)
+                        {
+                            explanation.Add($"P{i.id} can be executed. Work before: {string.Join(" ", Work)}");
 
                             for (int k = 0; k < nresources; k++)
-                                available[k] += i.Allocation[k];
-                            seq.Add(i.id);
+                                Work[k] += i.Allocation[k];
 
+                            explanation.Add($"P{i.id} finishes. Updated Work: {string.Join(" ", Work)}");
+
+                            finished--;
+                            localState[i.id] = true;
+                            seq.Add(i.id);
                         }
                     }
                 }
+
                 if (counter == finished)
                 {
+                    explanation.Add("No process can proceed. System is NOT in a safe state.");
                     return false;
                 }
-
             }
-            return true;
 
+            explanation.Add("All processes can finish. System is in a SAFE state.");
+            return true;
         }
+
 
         private void btnMax_Click(object sender, EventArgs e)
         {
@@ -194,7 +220,7 @@ namespace Algorithm_Simulator
             richMax.AppendText("P" + count_max + " -> " + s + "\n");
             txtMax.Clear();
             count_max++;
-            lblMax.Text = "Ma trận cần thiết (" + (nprocesses - count_max) + ")";
+            lblMax.Text = "Max matrix (" + (nprocesses - count_max) + ")";
             if (count_max == nprocesses)
             {
                 txtMax.Enabled = false;
@@ -208,8 +234,8 @@ namespace Algorithm_Simulator
             nresources = int.Parse(txtNRes.Text);
             count_alloc = 0;
             count_max = 0;
-            lblAlloc.Text = "Ma trận cung cấp (" + (nprocesses - count_max) + ")";
-            lblMax.Text = "Ma trận cần thiết (" + (nprocesses - count_alloc) + ")";
+            lblAlloc.Text = "Allocation matrix (" + (nprocesses - count_max) + ")";
+            lblMax.Text = "Max matrix (" + (nprocesses - count_alloc) + ")";
             txtAlloc.Enabled = true;
             btnAlloc.Enabled = true;
             txtAvail.Enabled = true;
@@ -226,12 +252,6 @@ namespace Algorithm_Simulator
             Allocation = new int[nprocesses][];
             Max = new int[nprocesses][];
             btnCheck.Enabled = true;
-            /*
-            for (int i = 0; i < nprocesses; i++)
-            {
-                Allocation[i] = new int[nresources];
-            }
-            */
         }
 
 
@@ -243,52 +263,16 @@ namespace Algorithm_Simulator
             richAlloc.AppendText("P" + count_alloc + " -> " + s + "\n");
             txtAlloc.Clear();
             count_alloc++;
-            lblAlloc.Text = "Ma trận cung cấp (" + (nprocesses - count_alloc) + ")";
+            lblAlloc.Text = "Allocation matrix (" + (nprocesses - count_alloc) + ")";
             if (count_alloc == nprocesses)
             {
                 txtAlloc.Enabled = false;
                 btnAlloc.Enabled = false;
             }
-
-
-
-
-
-            //rich_allocation.AppendText(allocation.ToString()+"\n");
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtAlloc.Text = "";
-            txtAvail.Text = "";
-            txtMax.Text = "";
-            txtNProc.Text = "";
-            txtNRes.Text = "";
-            txtProcReq.Text = "";
-            txtResReq.Text = "";
-            richAlloc.Text = "";
-            richMax.Text = "";
-            richNeed.Text = "";
-            richOutput.Text = "";
-
-            lblMax.Text = "Ma trận cần thiết";
-            lblAlloc.Text = "Ma trận cung cấp";
-            txtAlloc.Enabled = false;
-            btnAlloc.Enabled = false;
-            txtMax.Enabled = false;
-            btnMax.Enabled = false;
-            txtAvail.Enabled = false;
-
-            txtNProc.Enabled = true;
-            txtNRes.Enabled = true;
-            btnContinue.Enabled = true;
-
-            radiobtnSafe.Checked = true;
-            radiobtnRequest.Checked = false;
-            radiobtnSafe.Enabled = false;
-            radiobtnRequest.Enabled = false;
-
-            // clear the data 
             processes.Clear();
             seq.Clear();
             req.Clear();
@@ -296,12 +280,14 @@ namespace Algorithm_Simulator
             this.InitializeComponent();
             btnCheck.Enabled = false;
             btnContinue.Enabled = false;
+            radiobtnSafe.Checked = true;
         }
 
         private void FormBanker_Load(object sender, EventArgs e)
         {
             btnContinue.Enabled = false;
             btnCheck.Enabled = false;
+            radiobtnSafe.Checked = true;
         }
 
         private void txtNProc_TextChanged(object sender, EventArgs e)
@@ -328,64 +314,58 @@ namespace Algorithm_Simulator
             }
         }
 
-        private bool Request(List<process> processes, int[] available, int p, List<int> req)
+        private bool Request(List<process> processes, int[] available, int p, List<int> req, out List<string> explanation)
         {
-            int j;
-            for (j = 0; j < nresources; j++)
-                if (req[j] > available[j] || req[j] > processes[p].Need[j]) break;
-            if (j != nresources) return false;
-            for (int i = 0; i < nprocesses; i++)
+            explanation = new List<string>();
+
+            for (int j = 0; j < nresources; j++)
             {
-                process pp = processes[0];
-                processes.RemoveAt(0);
-                if (pp.id == p)
+                if (req[j] > available[j])
                 {
-                    for (j = 0; j < nresources; j++)
-                    {
-                        pp.Allocation[j] += req[j];
-                        pp.Need[j] -= req[j];
-                        available[j] -= req[j];
-                    }
-                }
-                processes.Add(pp);
-            }
-
-            /*
-            int finished = nprocesses;
-            while (finished != 0)
-            {
-                int counter = finished;
-                foreach (var i in processes)
-                {
-                    if (state[i.id] == false)
-                    {
-                        for (j = 0; j < nresources; j++)
-                            if (i.Need[j] > available[j]) break;
-                        if (j == nresources)
-                        {
-                            finished--;
-                            //processes[i.id].status = true;
-                            state[i.id] = true;
-
-                            for (int k = 0; k < nresources; k++)
-                                available[k] += i.Allocation[k];
-                            seq.Add(i.id);
-
-                        }
-                    }
-                }
-                if (counter == finished)
-                {
+                    explanation.Add($"Request denied: req[{j}] = {req[j]} > available[{j}] = {available[j]}");
                     return false;
                 }
-
+                if (req[j] > processes[p].Need[j])
+                {
+                    explanation.Add($"Request denied: req[{j}] = {req[j]} > need[{j}] = {processes[p].Need[j]}");
+                    return false;
+                }
             }
-            return true;
-            */
-            return IsSafe(processes, available);
+
+            explanation.Add($"Request from P{p} is valid. Proceeding to check safety.");
+
+            int[] tempAvailable = (int[])available.Clone();
+            List<process> tempProcesses = new List<process>();
+
+            foreach (var proc in processes)
+            {
+                var clone = new process
+                {
+                    id = proc.id,
+                    Allocation = new List<int>(proc.Allocation),
+                    Max = new List<int>(proc.Max),
+                    Need = new List<int>(proc.Need)
+                };
+
+                if (proc.id == p)
+                {
+                    for (int j = 0; j < nresources; j++)
+                    {
+                        clone.Allocation[j] += req[j];
+                        clone.Need[j] -= req[j];
+                        tempAvailable[j] -= req[j];
+                    }
+                }
+
+                tempProcesses.Add(clone);
+            }
+
+            List<string> safeExplanation;
+            bool safe = IsSafe(tempProcesses, tempAvailable, out safeExplanation);
+
+            explanation.AddRange(safeExplanation);
+
+            return safe;
         }
-
-
-
     }
 }
