@@ -1,6 +1,6 @@
 ﻿namespace Algorithm_Simulator
 {
-    partial class formD
+    partial class FormD
     {
         /// <summary>
         /// Required designer variable.

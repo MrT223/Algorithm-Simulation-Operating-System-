@@ -20,7 +20,7 @@ namespace Algorithm_Simulator
         private void PFSR_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PFSR_Form pFSR_Form = new PFSR_Form();
+            FormC pFSR_Form = new FormC();
             pFSR_Form.ShowDialog();
             this.Close();
         }
@@ -28,16 +28,25 @@ namespace Algorithm_Simulator
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formD formD = new formD();
+            FormD formD = new FormD();
             formD.ShowDialog();
             this.Close();
         }
 
         private void btnCPU_Distribution_Click(object sender, EventArgs e)
         {
-            this.Hide();                  // Ẩn MainForm tạm thời
+            this.Hide();
             FormB formB = new FormB(this);
-            formB.Show();
+            formB.ShowDialog();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormBanker FormA = new FormBanker();
+            FormA.ShowDialog();
+            this.Close();
         }
     }
 }

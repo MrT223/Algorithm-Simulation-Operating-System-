@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Algorithm_Simulator
 {
-    public partial class formD : Form
+    public partial class FormD : Form
     {
         private List<System.Windows.Forms.Button> generatedButtons = new List<System.Windows.Forms.Button>();
         private string typeAlgorithm = "FCFS";
-        public formD()
+        public FormD()
         {
             InitializeComponent();
         }

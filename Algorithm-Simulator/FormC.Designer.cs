@@ -1,6 +1,6 @@
 ﻿namespace Algorithm_Simulator
 {
-    partial class PFSR_Form
+    partial class FormC
     {
         /// <summary>
         /// Required designer variable.
@@ -225,7 +225,7 @@
             this.btnOPT.UseVisualStyleBackColor = true;
             this.btnOPT.Click += new System.EventHandler(this.btnOPT_Click);
             // 
-            // PFSR_Form
+            // FormC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -233,7 +233,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.grBoxInp);
-            this.Name = "PFSR_Form";
+            this.Name = "FormC";
             this.Text = "PFSR_Form";
             this.grBoxInp.ResumeLayout(false);
             this.grBoxInp.PerformLayout();

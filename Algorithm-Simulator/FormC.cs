@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Algorithm_Simulator
 {
-    public partial class PFSR_Form : Form
+    public partial class FormC : Form
     {
         int n = 0;
         int h = 0;
@@ -20,7 +20,7 @@ namespace Algorithm_Simulator
         private int[] frame;
         private bool stepByStep = false;
 
-        public PFSR_Form()
+        public FormC()
         {
             InitializeComponent();
         }
