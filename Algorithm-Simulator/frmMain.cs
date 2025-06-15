@@ -20,9 +20,8 @@ namespace Algorithm_Simulator
         private void PFSR_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormC pFSR_Form = new FormC();
+            FormC pFSR_Form = new FormC(this);
             pFSR_Form.ShowDialog();
-            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -38,7 +37,6 @@ namespace Algorithm_Simulator
             this.Hide();
             FormB formB = new FormB(this);
             formB.ShowDialog();
-            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)

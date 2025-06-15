@@ -20,9 +20,11 @@ namespace Algorithm_Simulator
         private int[] frame;
         private bool stepByStep = false;
 
-        public FormC()
+        private Form MainForm;
+        public FormC(Form callingForm)
         {
             InitializeComponent();
+            MainForm = callingForm;
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -449,6 +451,12 @@ namespace Algorithm_Simulator
                 else
                     dataGridView.Rows[1 + j].Cells[currentStep].Value = "";
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MainForm.Show();
         }
     }
 }

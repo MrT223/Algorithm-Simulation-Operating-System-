@@ -43,9 +43,9 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(708, 181);
+            this.button1.Location = new System.Drawing.Point(708, 192);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(210, 110);
+            this.button1.Size = new System.Drawing.Size(210, 117);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = false;
@@ -54,9 +54,9 @@
             // btnCPU_Distribution
             // 
             this.btnCPU_Distribution.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCPU_Distribution.Location = new System.Drawing.Point(924, 267);
+            this.btnCPU_Distribution.Location = new System.Drawing.Point(924, 284);
             this.btnCPU_Distribution.Name = "btnCPU_Distribution";
-            this.btnCPU_Distribution.Size = new System.Drawing.Size(210, 110);
+            this.btnCPU_Distribution.Size = new System.Drawing.Size(210, 117);
             this.btnCPU_Distribution.TabIndex = 1;
             this.btnCPU_Distribution.Text = "CÂU B ĐIỀU PHỐI CPU";
             this.btnCPU_Distribution.UseVisualStyleBackColor = false;
@@ -65,9 +65,9 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Location = new System.Drawing.Point(1356, 446);
+            this.button3.Location = new System.Drawing.Point(1356, 474);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(210, 110);
+            this.button3.Size = new System.Drawing.Size(210, 117);
             this.button3.TabIndex = 2;
             this.button3.Text = "CÂU D DISK SCHEDULING";
             this.button3.UseVisualStyleBackColor = false;
@@ -77,9 +77,9 @@
             // 
             this.PFSR.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PFSR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PFSR.Location = new System.Drawing.Point(1140, 356);
+            this.PFSR.Location = new System.Drawing.Point(1140, 387);
             this.PFSR.Name = "PFSR";
-            this.PFSR.Size = new System.Drawing.Size(210, 110);
+            this.PFSR.Size = new System.Drawing.Size(210, 117);
             this.PFSR.TabIndex = 3;
             this.PFSR.Text = "PSFR";
             this.PFSR.UseVisualStyleBackColor = false;
@@ -89,7 +89,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1077, 106);
+            this.label1.Location = new System.Drawing.Point(1077, 113);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(237, 40);
             this.label1.TabIndex = 4;
@@ -98,10 +98,10 @@
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.Font = new System.Drawing.Font("Newsreader 60pt", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(203, 9);
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Location = new System.Drawing.Point(203, 10);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(1208, 67);
+            this.lbl1.Size = new System.Drawing.Size(1162, 54);
             this.lbl1.TabIndex = 5;
             this.lbl1.Text = "Chương trình minh họa các giải thuật - Hệ Điều Hành";
             // 
@@ -109,7 +109,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(97, 212);
+            this.label3.Location = new System.Drawing.Point(97, 225);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(593, 36);
             this.label3.TabIndex = 7;
@@ -119,7 +119,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(378, 311);
+            this.label4.Location = new System.Drawing.Point(378, 330);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(531, 36);
             this.label4.TabIndex = 8;
@@ -129,7 +129,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(514, 402);
+            this.label5.Location = new System.Drawing.Point(514, 427);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(620, 36);
             this.label5.TabIndex = 9;
@@ -139,7 +139,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(563, 489);
+            this.label6.Location = new System.Drawing.Point(563, 520);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(787, 36);
             this.label6.TabIndex = 10;
@@ -147,10 +147,10 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(1577, 687);
+            this.ClientSize = new System.Drawing.Size(1577, 730);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -161,6 +161,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnCPU_Distribution);
             this.Controls.Add(this.button1);
+            this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "MainForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
