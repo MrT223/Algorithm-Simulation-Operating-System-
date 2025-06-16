@@ -36,7 +36,6 @@
             this.panelProcess = new System.Windows.Forms.Panel();
             this.grBoxGrantt = new System.Windows.Forms.GroupBox();
             this.PanelGantt = new System.Windows.Forms.Panel();
-            this.checkPriority = new System.Windows.Forms.CheckBox();
             this.lblSpeed = new System.Windows.Forms.Label();
             this.trBarSpeed = new System.Windows.Forms.TrackBar();
             this.btnReset = new System.Windows.Forms.Button();
@@ -169,16 +168,6 @@
             this.PanelGantt.Size = new System.Drawing.Size(1488, 109);
             this.PanelGantt.TabIndex = 0;
             // 
-            // checkPriority
-            // 
-            this.checkPriority.AutoSize = true;
-            this.checkPriority.Location = new System.Drawing.Point(62, 212);
-            this.checkPriority.Name = "checkPriority";
-            this.checkPriority.Size = new System.Drawing.Size(76, 21);
-            this.checkPriority.TabIndex = 19;
-            this.checkPriority.Text = "Priority";
-            this.checkPriority.UseVisualStyleBackColor = true;
-            // 
             // lblSpeed
             // 
             this.lblSpeed.AutoSize = true;
@@ -223,7 +212,6 @@
             // 
             // grBoxRun
             // 
-            this.grBoxRun.Controls.Add(this.checkPriority);
             this.grBoxRun.Controls.Add(this.lblSpeed);
             this.grBoxRun.Controls.Add(this.trBarSpeed);
             this.grBoxRun.Controls.Add(this.btnReset);
@@ -271,7 +259,7 @@
             this.lblQuantum.Name = "lblQuantum";
             this.lblQuantum.Size = new System.Drawing.Size(116, 17);
             this.lblQuantum.TabIndex = 17;
-            this.lblQuantum.Text = "Time Quantum: 2";
+            this.lblQuantum.Text = "Quantum Time: 2";
             this.lblQuantum.Visible = false;
             // 
             // trBarQuantum
@@ -585,7 +573,6 @@
         private System.Windows.Forms.GroupBox groupResult;
         private System.Windows.Forms.Panel panelProcess;
         private System.Windows.Forms.GroupBox grBoxGrantt;
-        private System.Windows.Forms.CheckBox checkPriority;
         private System.Windows.Forms.Label lblSpeed;
         private System.Windows.Forms.TrackBar trBarSpeed;
         private System.Windows.Forms.Button btnReset;

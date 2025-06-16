@@ -3,27 +3,35 @@
   "WorkspaceRootPath": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\algorithm-simulator\\forma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\forma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\algorithm-simulator\\formb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|c:\\users\\asus\\documents\\github\\algorithm-simulation-operating-system-\\algorithm-simulator\\formd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|c:\\users\\asus\\documents\\github\\algorithm-simulation-operating-system-\\algorithm-simulator\\formb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\algorithm-simulator\\formc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\algorithm-simulator\\formc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\algorithm-simulator\\forma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\forma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\algorithm-simulator\\formd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\algorithm-simulator\\forma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\forma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\algorithm-simulator\\formb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|c:\\users\\asus\\documents\\github\\algorithm-simulation-operating-system-\\algorithm-simulator\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\algorithm-simulator\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -31,16 +39,8 @@
       "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|c:\\users\\asus\\documents\\github\\algorithm-simulation-operating-system-\\algorithm-simulator\\formd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\algorithm-simulator\\formd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|c:\\users\\asus\\documents\\github\\algorithm-simulation-operating-system-\\algorithm-simulator\\formc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\algorithm-simulator\\formb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,7 +78,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "FormD.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\formD.cs",
               "RelativeDocumentMoniker": "Algorithm-Simulator\\formD.cs",
@@ -86,50 +86,48 @@
               "RelativeToolTip": "Algorithm-Simulator\\formD.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T13:57:28.897Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-16T13:57:28.897Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "FormC.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormC.cs",
               "RelativeDocumentMoniker": "Algorithm-Simulator\\FormC.cs",
               "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormC.cs",
               "RelativeToolTip": "Algorithm-Simulator\\FormC.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAhwDAAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-16T13:43:08.826Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "FormD.cs [Design]",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\formD.cs",
               "RelativeDocumentMoniker": "Algorithm-Simulator\\formD.cs",
               "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\formD.cs [Design]",
               "RelativeToolTip": "Algorithm-Simulator\\formD.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T13:42:21.764Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-16T13:42:21.764Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "FormB.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormB.cs",
               "RelativeDocumentMoniker": "Algorithm-Simulator\\FormB.cs",
               "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormB.cs",
               "RelativeToolTip": "Algorithm-Simulator\\FormB.cs",
-              "ViewState": "AgIAAOEAAAAAAAAAAAAIwO8AAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAEBAAAAAAAAAAAmwB0BAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-16T06:24:13.295Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "FormB.cs [Design]",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormB.cs",
               "RelativeDocumentMoniker": "Algorithm-Simulator\\FormB.cs",
@@ -141,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "FormC.cs [Design]",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormC.cs",
               "RelativeDocumentMoniker": "Algorithm-Simulator\\FormC.cs",
@@ -153,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "frmMain.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\frmMain.cs",
               "RelativeDocumentMoniker": "Algorithm-Simulator\\frmMain.cs",
@@ -161,36 +159,33 @@
               "RelativeToolTip": "Algorithm-Simulator\\frmMain.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAADgvxIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T11:50:41.004Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-14T11:50:41.004Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "frmMain.cs [Design]",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\frmMain.cs",
               "RelativeDocumentMoniker": "Algorithm-Simulator\\frmMain.cs",
               "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\frmMain.cs [Design]",
               "RelativeToolTip": "Algorithm-Simulator\\frmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T11:42:21.675Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-14T11:42:21.675Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "FormA.cs [Design]",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormA.cs",
               "RelativeDocumentMoniker": "Algorithm-Simulator\\FormA.cs",
               "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormA.cs [Design]",
               "RelativeToolTip": "Algorithm-Simulator\\FormA.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T11:41:39.718Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-14T11:41:39.718Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "FormA.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormA.cs",
               "RelativeDocumentMoniker": "Algorithm-Simulator\\FormA.cs",
@@ -198,8 +193,7 @@
               "RelativeToolTip": "Algorithm-Simulator\\FormA.cs",
               "ViewState": "AgIAAEQAAAAAAAAAAAAhwFEAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T11:46:21.828Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-14T11:46:21.828Z"
             }
           ]
         }

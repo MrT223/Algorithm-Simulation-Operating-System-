@@ -283,7 +283,7 @@ namespace Algorithm_Simulator
 
         private void trBarQuantum_Scroll(object sender, EventArgs e)
         {
-            lblQuantum.Text = "Time Quantum: " + trBarQuantum.Value.ToString();
+            lblQuantum.Text = "Quantum Time: " + trBarQuantum.Value.ToString();
         }
 
         private void trBarSpeed_Scroll(object sender, EventArgs e)
