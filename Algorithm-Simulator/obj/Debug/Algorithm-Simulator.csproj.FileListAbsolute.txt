@@ -27,7 +27,6 @@ C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-
 C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\bin\Debug\Algorithm-Simulator.pdb
 C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.csproj.AssemblyReference.cache
 C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.MainForm.resources
-C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.PFSR_Form.resources
 C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.FormB.resources
 C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.formD.resources
 C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.Properties.Resources.resources
@@ -50,3 +49,5 @@ C:\Study\HDH\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debu
 C:\Study\HDH\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.exe
 C:\Study\HDH\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.pdb
 C:\Study\HDH\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.FormC.resources
+C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.FormC.resources
+C:\Users\ASUS\Documents\GitHub\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.FormBanker.resources

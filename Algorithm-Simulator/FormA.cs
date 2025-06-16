@@ -35,9 +35,11 @@ namespace Algorithm_Simulator
         public bool[] state;
 
 
-        public FormBanker()
+        private Form MainForm;
+        public FormBanker(Form callingForm)
         {
             InitializeComponent();
+            MainForm = callingForm;
         }
 
 
@@ -300,6 +302,12 @@ namespace Algorithm_Simulator
             {
                 btnContinue.Enabled = false;
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MainForm.Show();
         }
 
         private void txtNRes_TextChanged(object sender, EventArgs e)

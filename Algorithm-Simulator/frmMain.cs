@@ -17,36 +17,32 @@ namespace Algorithm_Simulator
             InitializeComponent();
         }
 
-        private void PFSR_Click(object sender, EventArgs e)
+        private void btnD_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormC pFSR_Form = new FormC();
-            pFSR_Form.ShowDialog();
-            this.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormD formD = new FormD();
+            FormD formD = new FormD(this);
             formD.ShowDialog();
-            this.Close();
         }
 
-        private void btnCPU_Distribution_Click(object sender, EventArgs e)
+        private void bntC_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormC pFSR_Form = new FormC(this);
+            pFSR_Form.ShowDialog();
+        }
+
+        private void btnB_Click(object sender, EventArgs e)
         {
             this.Hide();
             FormB formB = new FormB(this);
             formB.ShowDialog();
-            this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnA_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormBanker FormA = new FormBanker();
+            FormBanker FormA = new FormBanker(this);
             FormA.ShowDialog();
-            this.Close();
         }
     }
 }

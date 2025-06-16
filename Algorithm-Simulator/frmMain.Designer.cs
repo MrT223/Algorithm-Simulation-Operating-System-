@@ -35,14 +35,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblE = new System.Windows.Forms.Label();
+            this.lblmemD = new System.Windows.Forms.Label();
+            this.lblmemC = new System.Windows.Forms.Label();
+            this.lblmemB = new System.Windows.Forms.Label();
+            this.lblmemA = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblmember = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblmemA = new System.Windows.Forms.Label();
-            this.lblmemB = new System.Windows.Forms.Label();
-            this.lblmemC = new System.Windows.Forms.Label();
-            this.lblmemD = new System.Windows.Forms.Label();
-            this.lblE = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -58,7 +58,7 @@
             this.btnA.TabIndex = 0;
             this.btnA.Text = "Banker\'s algorithm";
             this.btnA.UseVisualStyleBackColor = false;
-            this.btnA.Click += new System.EventHandler(this.button1_Click);
+            this.btnA.Click += new System.EventHandler(this.btnA_Click);
             // 
             // btnB
             // 
@@ -70,7 +70,7 @@
             this.btnB.TabIndex = 1;
             this.btnB.Text = "CPU scheduling algorithms";
             this.btnB.UseVisualStyleBackColor = false;
-            this.btnB.Click += new System.EventHandler(this.btnCPU_Distribution_Click);
+            this.btnB.Click += new System.EventHandler(this.btnB_Click);
             // 
             // btnD
             // 
@@ -82,7 +82,7 @@
             this.btnD.TabIndex = 2;
             this.btnD.Text = "Disk access scheduling algorithms";
             this.btnD.UseVisualStyleBackColor = false;
-            this.btnD.Click += new System.EventHandler(this.button3_Click);
+            this.btnD.Click += new System.EventHandler(this.btnD_Click);
             // 
             // bntC
             // 
@@ -94,7 +94,7 @@
             this.bntC.TabIndex = 3;
             this.bntC.Text = "Page replacement algorithms";
             this.bntC.UseVisualStyleBackColor = false;
-            this.bntC.Click += new System.EventHandler(this.PFSR_Click);
+            this.bntC.Click += new System.EventHandler(this.bntC_Click);
             // 
             // label1
             // 
@@ -111,11 +111,11 @@
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.BackColor = System.Drawing.SystemColors.Control;
-            this.lbl1.Font = new System.Drawing.Font("Newsreader 60pt", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lbl1.Location = new System.Drawing.Point(38, 27);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(1208, 67);
+            this.lbl1.Size = new System.Drawing.Size(1162, 54);
             this.lbl1.TabIndex = 5;
             this.lbl1.Text = "Chương trình minh họa các giải thuật - Hệ Điều Hành";
             // 
@@ -132,6 +132,56 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(707, 512);
             this.panel1.TabIndex = 6;
+            // 
+            // lblE
+            // 
+            this.lblE.AutoSize = true;
+            this.lblE.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblE.Location = new System.Drawing.Point(133, 415);
+            this.lblE.Name = "lblE";
+            this.lblE.Size = new System.Drawing.Size(300, 36);
+            this.lblE.TabIndex = 6;
+            this.lblE.Text = "Nguyễn Quang Khắm";
+            // 
+            // lblmemD
+            // 
+            this.lblmemD.AutoSize = true;
+            this.lblmemD.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmemD.Location = new System.Drawing.Point(133, 346);
+            this.lblmemD.Name = "lblmemD";
+            this.lblmemD.Size = new System.Drawing.Size(336, 36);
+            this.lblmemD.TabIndex = 5;
+            this.lblmemD.Text = "Nguyễn Hữu Minh Quân";
+            // 
+            // lblmemC
+            // 
+            this.lblmemC.AutoSize = true;
+            this.lblmemC.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmemC.Location = new System.Drawing.Point(133, 270);
+            this.lblmemC.Name = "lblmemC";
+            this.lblmemC.Size = new System.Drawing.Size(335, 36);
+            this.lblmemC.TabIndex = 4;
+            this.lblmemC.Text = "Nguyễn Võ Minh Hoàng";
+            // 
+            // lblmemB
+            // 
+            this.lblmemB.AutoSize = true;
+            this.lblmemB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmemB.Location = new System.Drawing.Point(133, 196);
+            this.lblmemB.Name = "lblmemB";
+            this.lblmemB.Size = new System.Drawing.Size(250, 36);
+            this.lblmemB.TabIndex = 3;
+            this.lblmemB.Text = "Cao Võ Tuấn Kiệt";
+            // 
+            // lblmemA
+            // 
+            this.lblmemA.AutoSize = true;
+            this.lblmemA.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmemA.Location = new System.Drawing.Point(133, 124);
+            this.lblmemA.Name = "lblmemA";
+            this.lblmemA.Size = new System.Drawing.Size(403, 36);
+            this.lblmemA.TabIndex = 2;
+            this.lblmemA.Text = "Bùi Minh Tín - 49.01.104.152";
             // 
             // panel2
             // 
@@ -161,56 +211,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(254, 41);
             this.panel3.TabIndex = 7;
-            // 
-            // lblmemA
-            // 
-            this.lblmemA.AutoSize = true;
-            this.lblmemA.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmemA.Location = new System.Drawing.Point(133, 124);
-            this.lblmemA.Name = "lblmemA";
-            this.lblmemA.Size = new System.Drawing.Size(403, 36);
-            this.lblmemA.TabIndex = 2;
-            this.lblmemA.Text = "Bùi Minh Tín - 49.01.104.152";
-            // 
-            // lblmemB
-            // 
-            this.lblmemB.AutoSize = true;
-            this.lblmemB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmemB.Location = new System.Drawing.Point(133, 196);
-            this.lblmemB.Name = "lblmemB";
-            this.lblmemB.Size = new System.Drawing.Size(250, 36);
-            this.lblmemB.TabIndex = 3;
-            this.lblmemB.Text = "Cao Võ Tuấn Kiệt";
-            // 
-            // lblmemC
-            // 
-            this.lblmemC.AutoSize = true;
-            this.lblmemC.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmemC.Location = new System.Drawing.Point(133, 270);
-            this.lblmemC.Name = "lblmemC";
-            this.lblmemC.Size = new System.Drawing.Size(335, 36);
-            this.lblmemC.TabIndex = 4;
-            this.lblmemC.Text = "Nguyễn Võ Minh Hoàng";
-            // 
-            // lblmemD
-            // 
-            this.lblmemD.AutoSize = true;
-            this.lblmemD.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmemD.Location = new System.Drawing.Point(133, 346);
-            this.lblmemD.Name = "lblmemD";
-            this.lblmemD.Size = new System.Drawing.Size(336, 36);
-            this.lblmemD.TabIndex = 5;
-            this.lblmemD.Text = "Nguyễn Hữu Minh Quân";
-            // 
-            // lblE
-            // 
-            this.lblE.AutoSize = true;
-            this.lblE.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblE.Location = new System.Drawing.Point(133, 415);
-            this.lblE.Name = "lblE";
-            this.lblE.Size = new System.Drawing.Size(300, 36);
-            this.lblE.TabIndex = 6;
-            this.lblE.Text = "Nguyễn Quang Khắm";
             // 
             // MainForm
             // 

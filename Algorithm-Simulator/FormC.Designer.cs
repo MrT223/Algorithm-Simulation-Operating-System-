@@ -44,6 +44,7 @@
             this.btnLRU = new System.Windows.Forms.Button();
             this.btnFIFO = new System.Windows.Forms.Button();
             this.btnOPT = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.grBoxInp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -87,8 +88,8 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.Location = new System.Drawing.Point(246, 44);
+            this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.Location = new System.Drawing.Point(246, 52);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(91, 37);
             this.btnCreate.TabIndex = 2;
@@ -141,12 +142,13 @@
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Menu;
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox2.Controls.Add(this.btnExit);
             this.groupBox2.Controls.Add(this.chkStepByStep);
             this.groupBox2.Controls.Add(this.btnRestart);
             this.groupBox2.Controls.Add(this.btnStart);
             this.groupBox2.Location = new System.Drawing.Point(26, 214);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(267, 132);
+            this.groupBox2.Size = new System.Drawing.Size(335, 132);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Run";
@@ -163,9 +165,10 @@
             // 
             // btnRestart
             // 
-            this.btnRestart.Location = new System.Drawing.Point(145, 43);
+            this.btnRestart.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestart.Location = new System.Drawing.Point(132, 43);
             this.btnRestart.Name = "btnRestart";
-            this.btnRestart.Size = new System.Drawing.Size(103, 46);
+            this.btnRestart.Size = new System.Drawing.Size(82, 46);
             this.btnRestart.TabIndex = 5;
             this.btnRestart.Text = "Restart";
             this.btnRestart.UseVisualStyleBackColor = true;
@@ -173,9 +176,10 @@
             // 
             // btnStart
             // 
+            this.btnStart.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.Location = new System.Drawing.Point(16, 43);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(106, 46);
+            this.btnStart.Size = new System.Drawing.Size(82, 46);
             this.btnStart.TabIndex = 4;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -183,7 +187,7 @@
             // 
             // btnClock
             // 
-            this.btnClock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClock.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClock.Location = new System.Drawing.Point(195, 127);
             this.btnClock.Name = "btnClock";
             this.btnClock.Size = new System.Drawing.Size(142, 61);
@@ -194,7 +198,7 @@
             // 
             // btnLRU
             // 
-            this.btnLRU.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLRU.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLRU.Location = new System.Drawing.Point(26, 127);
             this.btnLRU.Name = "btnLRU";
             this.btnLRU.Size = new System.Drawing.Size(142, 61);
@@ -205,7 +209,7 @@
             // 
             // btnFIFO
             // 
-            this.btnFIFO.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFIFO.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFIFO.Location = new System.Drawing.Point(195, 34);
             this.btnFIFO.Name = "btnFIFO";
             this.btnFIFO.Size = new System.Drawing.Size(142, 61);
@@ -216,7 +220,7 @@
             // 
             // btnOPT
             // 
-            this.btnOPT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOPT.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOPT.Location = new System.Drawing.Point(26, 34);
             this.btnOPT.Name = "btnOPT";
             this.btnOPT.Size = new System.Drawing.Size(142, 61);
@@ -224,6 +228,17 @@
             this.btnOPT.Text = "OPT";
             this.btnOPT.UseVisualStyleBackColor = true;
             this.btnOPT.Click += new System.EventHandler(this.btnOPT_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(232, 43);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(82, 46);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FormC
             // 
@@ -233,7 +248,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.grBoxInp);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PFSR_Form";
@@ -265,5 +280,6 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.CheckBox chkStepByStep;
         private System.Windows.Forms.Button btnRestart;
+        private System.Windows.Forms.Button btnExit;
     }
 }

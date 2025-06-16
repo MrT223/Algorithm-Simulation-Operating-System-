@@ -95,7 +95,7 @@
             this.dgvResult.Name = "dgvResult";
             this.dgvResult.RowHeadersWidth = 51;
             this.dgvResult.RowTemplate.Height = 24;
-            this.dgvResult.Size = new System.Drawing.Size(474, 200);
+            this.dgvResult.Size = new System.Drawing.Size(449, 200);
             this.dgvResult.TabIndex = 1;
             // 
             // lblAVG
@@ -115,7 +115,7 @@
             this.dgvAVG.Name = "dgvAVG";
             this.dgvAVG.RowHeadersWidth = 51;
             this.dgvAVG.RowTemplate.Height = 24;
-            this.dgvAVG.Size = new System.Drawing.Size(474, 214);
+            this.dgvAVG.Size = new System.Drawing.Size(449, 214);
             this.dgvAVG.TabIndex = 0;
             // 
             // panelTotal
@@ -124,7 +124,7 @@
             this.panelTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelTotal.Location = new System.Drawing.Point(3, 295);
             this.panelTotal.Name = "panelTotal";
-            this.panelTotal.Size = new System.Drawing.Size(474, 214);
+            this.panelTotal.Size = new System.Drawing.Size(449, 214);
             this.panelTotal.TabIndex = 3;
             // 
             // groupResult
@@ -135,7 +135,7 @@
             this.groupResult.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupResult.Location = new System.Drawing.Point(1068, 15);
             this.groupResult.Name = "groupResult";
-            this.groupResult.Size = new System.Drawing.Size(480, 512);
+            this.groupResult.Size = new System.Drawing.Size(455, 512);
             this.groupResult.TabIndex = 25;
             this.groupResult.TabStop = false;
             this.groupResult.Text = "Result";
@@ -146,7 +146,7 @@
             this.panelProcess.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelProcess.Location = new System.Drawing.Point(3, 21);
             this.panelProcess.Name = "panelProcess";
-            this.panelProcess.Size = new System.Drawing.Size(474, 200);
+            this.panelProcess.Size = new System.Drawing.Size(449, 200);
             this.panelProcess.TabIndex = 1;
             // 
             // grBoxGrantt
@@ -155,7 +155,7 @@
             this.grBoxGrantt.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grBoxGrantt.Location = new System.Drawing.Point(29, 533);
             this.grBoxGrantt.Name = "grBoxGrantt";
-            this.grBoxGrantt.Size = new System.Drawing.Size(1516, 138);
+            this.grBoxGrantt.Size = new System.Drawing.Size(1494, 138);
             this.grBoxGrantt.TabIndex = 24;
             this.grBoxGrantt.TabStop = false;
             this.grBoxGrantt.Text = "Gantt Chart";
@@ -166,7 +166,7 @@
             this.PanelGantt.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelGantt.Location = new System.Drawing.Point(3, 26);
             this.PanelGantt.Name = "PanelGantt";
-            this.PanelGantt.Size = new System.Drawing.Size(1510, 109);
+            this.PanelGantt.Size = new System.Drawing.Size(1488, 109);
             this.PanelGantt.TabIndex = 0;
             // 
             // checkPriority
@@ -547,7 +547,9 @@
             this.Controls.Add(this.grBoxAlgorithm);
             this.Controls.Add(this.grBoxAdd);
             this.Controls.Add(this.grBoxlis);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormB";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormB";
             this.Load += new System.EventHandler(this.CPU_Distribution_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).EndInit();

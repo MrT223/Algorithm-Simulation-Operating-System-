@@ -15,9 +15,12 @@ namespace Algorithm_Simulator
     {
         private List<System.Windows.Forms.Button> generatedButtons = new List<System.Windows.Forms.Button>();
         private string typeAlgorithm = "FCFS";
-        public FormD()
+
+        private Form MainForm;
+        public FormD(Form callingForm)
         {
             InitializeComponent();
+            MainForm = callingForm;
         }
 
         private void txtRequests_KeyPress(object sender, KeyPressEventArgs e)
@@ -489,6 +492,12 @@ namespace Algorithm_Simulator
         private void lbInput2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MainForm.Show();
         }
     }
 }
