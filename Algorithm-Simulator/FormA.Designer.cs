@@ -29,17 +29,6 @@
         private void InitializeComponent()
         {
             this.radiobtnRequest = new System.Windows.Forms.RadioButton();
-            this.lblWork = new System.Windows.Forms.Label();
-            this.richNeed = new System.Windows.Forms.RichTextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.richMax = new System.Windows.Forms.RichTextBox();
-            this.richWork = new System.Windows.Forms.RichTextBox();
-            this.richAlloc = new System.Windows.Forms.RichTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblNeed = new System.Windows.Forms.Label();
-            this.richOutput = new System.Windows.Forms.RichTextBox();
-            this.lblOutput = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
             this.btnMax = new System.Windows.Forms.Button();
@@ -61,6 +50,17 @@
             this.lblResInput = new System.Windows.Forms.Label();
             this.lblProcInput = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.lblOutput = new System.Windows.Forms.Label();
+            this.richOutput = new System.Windows.Forms.RichTextBox();
+            this.lblNeed = new System.Windows.Forms.Label();
+            this.richNeed = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblWork = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.richAlloc = new System.Windows.Forms.RichTextBox();
+            this.richWork = new System.Windows.Forms.RichTextBox();
+            this.richMax = new System.Windows.Forms.RichTextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,120 +75,6 @@
             this.radiobtnRequest.TabStop = true;
             this.radiobtnRequest.Text = "Request";
             this.radiobtnRequest.UseVisualStyleBackColor = true;
-            // 
-            // lblWork
-            // 
-            this.lblWork.AutoSize = true;
-            this.lblWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWork.Location = new System.Drawing.Point(6, 253);
-            this.lblWork.Name = "lblWork";
-            this.lblWork.Size = new System.Drawing.Size(99, 20);
-            this.lblWork.TabIndex = 1;
-            this.lblWork.Text = "Work matrix";
-            // 
-            // richNeed
-            // 
-            this.richNeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richNeed.Location = new System.Drawing.Point(6, 493);
-            this.richNeed.Name = "richNeed";
-            this.richNeed.Size = new System.Drawing.Size(455, 199);
-            this.richNeed.TabIndex = 4;
-            this.richNeed.Text = "";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.richMax);
-            this.groupBox1.Controls.Add(this.richWork);
-            this.groupBox1.Controls.Add(this.richAlloc);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.lblWork);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.richNeed);
-            this.groupBox1.Controls.Add(this.lblNeed);
-            this.groupBox1.Controls.Add(this.richOutput);
-            this.groupBox1.Controls.Add(this.lblOutput);
-            this.groupBox1.Location = new System.Drawing.Point(634, -15);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(940, 715);
-            this.groupBox1.TabIndex = 30;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ma trận";
-            // 
-            // richMax
-            // 
-            this.richMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richMax.Location = new System.Drawing.Point(321, 58);
-            this.richMax.Name = "richMax";
-            this.richMax.Size = new System.Drawing.Size(279, 182);
-            this.richMax.TabIndex = 1;
-            this.richMax.Text = "";
-            // 
-            // richWork
-            // 
-            this.richWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richWork.Location = new System.Drawing.Point(10, 276);
-            this.richWork.Name = "richWork";
-            this.richWork.Size = new System.Drawing.Size(590, 182);
-            this.richWork.TabIndex = 4;
-            this.richWork.Text = "";
-            // 
-            // richAlloc
-            // 
-            this.richAlloc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richAlloc.Location = new System.Drawing.Point(10, 58);
-            this.richAlloc.Name = "richAlloc";
-            this.richAlloc.Size = new System.Drawing.Size(279, 182);
-            this.richAlloc.TabIndex = 4;
-            this.richAlloc.Text = "";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(317, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Max matrix";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Allocation matrix";
-            // 
-            // lblNeed
-            // 
-            this.lblNeed.AutoSize = true;
-            this.lblNeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNeed.Location = new System.Drawing.Point(6, 470);
-            this.lblNeed.Name = "lblNeed";
-            this.lblNeed.Size = new System.Drawing.Size(99, 20);
-            this.lblNeed.TabIndex = 1;
-            this.lblNeed.Text = "Need matrix";
-            // 
-            // richOutput
-            // 
-            this.richOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richOutput.Location = new System.Drawing.Point(509, 493);
-            this.richOutput.Name = "richOutput";
-            this.richOutput.Size = new System.Drawing.Size(331, 199);
-            this.richOutput.TabIndex = 7;
-            this.richOutput.Text = "";
-            // 
-            // lblOutput
-            // 
-            this.lblOutput.AutoSize = true;
-            this.lblOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutput.Location = new System.Drawing.Point(505, 470);
-            this.lblOutput.Name = "lblOutput";
-            this.lblOutput.Size = new System.Drawing.Size(59, 20);
-            this.lblOutput.TabIndex = 6;
-            this.lblOutput.Text = "Output";
             // 
             // btnClear
             // 
@@ -401,6 +287,120 @@
             this.lblTitle.TabIndex = 29;
             this.lblTitle.Text = "Banker\'s Algorithm";
             // 
+            // lblOutput
+            // 
+            this.lblOutput.AutoSize = true;
+            this.lblOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOutput.Location = new System.Drawing.Point(505, 470);
+            this.lblOutput.Name = "lblOutput";
+            this.lblOutput.Size = new System.Drawing.Size(59, 20);
+            this.lblOutput.TabIndex = 6;
+            this.lblOutput.Text = "Output";
+            // 
+            // richOutput
+            // 
+            this.richOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richOutput.Location = new System.Drawing.Point(509, 493);
+            this.richOutput.Name = "richOutput";
+            this.richOutput.Size = new System.Drawing.Size(331, 199);
+            this.richOutput.TabIndex = 7;
+            this.richOutput.Text = "";
+            // 
+            // lblNeed
+            // 
+            this.lblNeed.AutoSize = true;
+            this.lblNeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNeed.Location = new System.Drawing.Point(6, 470);
+            this.lblNeed.Name = "lblNeed";
+            this.lblNeed.Size = new System.Drawing.Size(99, 20);
+            this.lblNeed.TabIndex = 1;
+            this.lblNeed.Text = "Need matrix";
+            // 
+            // richNeed
+            // 
+            this.richNeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richNeed.Location = new System.Drawing.Point(6, 493);
+            this.richNeed.Name = "richNeed";
+            this.richNeed.Size = new System.Drawing.Size(455, 199);
+            this.richNeed.TabIndex = 4;
+            this.richNeed.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Allocation matrix";
+            // 
+            // lblWork
+            // 
+            this.lblWork.AutoSize = true;
+            this.lblWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWork.Location = new System.Drawing.Point(6, 253);
+            this.lblWork.Name = "lblWork";
+            this.lblWork.Size = new System.Drawing.Size(99, 20);
+            this.lblWork.TabIndex = 1;
+            this.lblWork.Text = "Work matrix";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(317, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Max matrix";
+            // 
+            // richAlloc
+            // 
+            this.richAlloc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richAlloc.Location = new System.Drawing.Point(10, 58);
+            this.richAlloc.Name = "richAlloc";
+            this.richAlloc.Size = new System.Drawing.Size(279, 182);
+            this.richAlloc.TabIndex = 4;
+            this.richAlloc.Text = "";
+            // 
+            // richWork
+            // 
+            this.richWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richWork.Location = new System.Drawing.Point(10, 276);
+            this.richWork.Name = "richWork";
+            this.richWork.Size = new System.Drawing.Size(590, 182);
+            this.richWork.TabIndex = 4;
+            this.richWork.Text = "";
+            // 
+            // richMax
+            // 
+            this.richMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richMax.Location = new System.Drawing.Point(321, 58);
+            this.richMax.Name = "richMax";
+            this.richMax.Size = new System.Drawing.Size(279, 182);
+            this.richMax.TabIndex = 1;
+            this.richMax.Text = "";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.richMax);
+            this.groupBox1.Controls.Add(this.richWork);
+            this.groupBox1.Controls.Add(this.richAlloc);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblWork);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.richNeed);
+            this.groupBox1.Controls.Add(this.lblNeed);
+            this.groupBox1.Controls.Add(this.richOutput);
+            this.groupBox1.Controls.Add(this.lblOutput);
+            this.groupBox1.Location = new System.Drawing.Point(634, -15);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(940, 715);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ma trận";
+            // 
             // FormBanker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -442,17 +442,6 @@
         #endregion
 
         private System.Windows.Forms.RadioButton radiobtnRequest;
-        private System.Windows.Forms.Label lblWork;
-        private System.Windows.Forms.RichTextBox richNeed;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RichTextBox richMax;
-        private System.Windows.Forms.RichTextBox richWork;
-        private System.Windows.Forms.RichTextBox richAlloc;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblNeed;
-        private System.Windows.Forms.RichTextBox richOutput;
-        private System.Windows.Forms.Label lblOutput;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.Button btnMax;
@@ -474,5 +463,16 @@
         private System.Windows.Forms.Label lblResInput;
         private System.Windows.Forms.Label lblProcInput;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblOutput;
+        private System.Windows.Forms.RichTextBox richOutput;
+        private System.Windows.Forms.Label lblNeed;
+        private System.Windows.Forms.RichTextBox richNeed;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblWork;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RichTextBox richAlloc;
+        private System.Windows.Forms.RichTextBox richWork;
+        private System.Windows.Forms.RichTextBox richMax;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

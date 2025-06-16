@@ -99,7 +99,7 @@
             // txtPage
             // 
             this.txtPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPage.Location = new System.Drawing.Point(6, 118);
+            this.txtPage.Location = new System.Drawing.Point(22, 118);
             this.txtPage.Name = "txtPage";
             this.txtPage.Size = new System.Drawing.Size(218, 22);
             this.txtPage.TabIndex = 1;
@@ -107,7 +107,7 @@
             // txtStep
             // 
             this.txtStep.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStep.Location = new System.Drawing.Point(6, 59);
+            this.txtStep.Location = new System.Drawing.Point(22, 59);
             this.txtStep.Name = "txtStep";
             this.txtStep.Size = new System.Drawing.Size(218, 22);
             this.txtStep.TabIndex = 0;
@@ -115,11 +115,11 @@
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(434, 12);
+            this.dataGridView.Location = new System.Drawing.Point(427, 12);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(1131, 663);
+            this.dataGridView.Size = new System.Drawing.Size(1088, 663);
             this.dataGridView.TabIndex = 1;
             // 
             // groupBox1
@@ -233,7 +233,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.grBoxInp);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PFSR_Form";
             this.grBoxInp.ResumeLayout(false);
             this.grBoxInp.PerformLayout();

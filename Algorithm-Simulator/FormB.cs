@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 namespace Algorithm_Simulator
 {
-
     public partial class FormB : Form
     {
         private Form MainForm;
@@ -35,9 +34,9 @@ namespace Algorithm_Simulator
             public int TurnAroundTime { get; set; }
             public int WaitingTime { get; set; }
         }
+
         private List<Process> ganttSegments = new List<Process>();
         Process currentSegment = null;
-
 
         private void CreateLb(string text)
         {
@@ -79,10 +78,22 @@ namespace Algorithm_Simulator
         private void CPU_Distribution_Load(object sender, EventArgs e)
         {
             HideQuantumControls();
+            UnablePio();
+        }
+
+        private void UnablePio()
+        {
+            trBarPrio.Enabled = false;
+        }
+
+        private void ablePio()
+        {
+            trBarPrio.Enabled = true;
         }
 
         private void HideQuantumControls()
         {
+            // Ẩn traBar quantum
             lblQuantum.Visible = false;
             trBarQuantum.Visible = false;
         }
@@ -225,7 +236,7 @@ namespace Algorithm_Simulator
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();       
+            this.Close();
             MainForm.Show();
         }
 
@@ -234,6 +245,7 @@ namespace Algorithm_Simulator
             HideQuantumControls();
             status = "FCFS";
             CreateLb("Describe:\nCác tiến trình được thực thi theo thứ tự chúng xuất hiện trong hàng đợi sẵn sàng.");
+            UnablePio();
         }
 
         private void btnSJF_Click(object sender, EventArgs e)
@@ -241,6 +253,7 @@ namespace Algorithm_Simulator
             HideQuantumControls();
             status = "SJF";
             CreateLb("Describe:\nThuật toán không ưu tiên trong đó tiến trình có thời gian bùng phát nhỏ nhất sẽ được thực thi trước.");
+            UnablePio();
         }
 
         private void btnSRTF_Click(object sender, EventArgs e)
@@ -248,6 +261,7 @@ namespace Algorithm_Simulator
             HideQuantumControls();
             status = "SRTF";
             CreateLb("Describe:\nPhiên bản ưu tiên của SJF trong đó tiến trình có thời gian còn lại nhỏ nhất sẽ được thực thi trước.");
+            ablePio();
         }
 
         private void btnPS_Click(object sender, EventArgs e)
@@ -255,6 +269,7 @@ namespace Algorithm_Simulator
             HideQuantumControls();
             status = "PS";
             CreateLb("Describe:\nCác tiến trình được thực hiện dựa trên mức độ ưu tiên. Số càng thấp thì mức độ ưu tiên càng cao.");
+            ablePio();
         }
 
         private void btnRR_Click(object sender, EventArgs e)
@@ -263,6 +278,7 @@ namespace Algorithm_Simulator
             trBarQuantum.Visible = true;
             status = "RR";
             CreateLb("Describe:\nMỗi tiến trình được chỉ định một khoảng thời gian cố định hoạt động theo cách tuần hoàn.");
+            UnablePio();
         }
 
         private void trBarQuantum_Scroll(object sender, EventArgs e)
@@ -304,10 +320,6 @@ namespace Algorithm_Simulator
                 return;
             }
 
-            // Khóa trạng thái
-            btnStart.Enabled = false;
-            btnReset.Enabled = false;
-
             string Algo = status;
             // Đọc dữ liệu từ DataGridView
             List<Process> processes = GetProcesses();
@@ -316,130 +328,75 @@ namespace Algorithm_Simulator
                 MessageBox.Show("Không có dữ liệu tiến trình.");
                 return;
             }
-            switch (Algo)
-            {
-                case "FCFS":
-                    Algo_FCFS(processes);
-                    break;
-                case "SJF":
-                    Algo_SJF(processes);
-                    break;
-                case "SRTF":
-                    Algo_SRTF(processes);
-                    break;
-                case "PS":
-                    Algo_PS(processes);
-                    break;
-                case "RR":
-                    int quantum = trBarQuantum.Value;
-                    Algo_RR(processes, quantum);
-                    break;
-            }
+
+            // Khóa trạng thái
+            btnStart.Enabled = false;
+            btnReset.Enabled = false;
+            Run(processes);
         }
 
-        private async void Algo_FCFS(List<Process> processes)
+        private async void Run(List<Process> processes)
         {
             // 1. Lấy danh sách tiến trình gốc
             var proc = GetProcesses();
 
-            // 2. Xóa/khởi tạo lại các phần hiển thị
+            // 2. Lấy quantum
+            int quantum = trBarQuantum.Value;
+
+            // 3. Xóa/khởi tạo lại các phần hiển thị
             PanelInfor.Controls.Clear();       // Clear PanelInfor 
             ClearGanttChart();                 // Clear Gantt chart
             ganttSegments.Clear();             // Clear danh sách đoạn Gantt
             dgvResult.Rows.Clear();            // Clear kết quả tiến trình
             dgvAVG.Rows.Clear();               // Clear AVG TAT/WT
 
-            // 3. Tạo bảng kết quả
+            // 4. Tạo bảng kết quả
             InitializeResultTable(proc);       // Ghi tên tiến trình trước, TAT/WT cập nhật sau
 
-            // 4. Gọi thuật toán FCFS
-            var result = await FCFS(proc);
+            // Lấy trạng thái
+            string Algo = status;
 
-            // 5. Hiển thị AVG sau khi toàn bộ tiến trình hoàn tất
-            DisplayAVG(result);
+            switch (Algo)
+            {
+                case "FCFS":
+                    // 5. Gọi thuật toán FCFS
+                    var res = await FCFS(proc);
+                    //Hiển thị AVG sau khi toàn bộ tiến trình hoàn tất
+                    DisplayAVG(res);
+                    break;
+                case "SJF":
+                    // 5. Gọi thuật toán SJF
+                    var res1 = await SJF(proc);
+                    //Hiển thị AVG sau khi toàn bộ tiến trình hoàn tất
+                    DisplayAVG(res1);
+                    break;
+                case "SRTF":
+                    // 5. Gọi thuật toán SRTF
+                    var res2 = await SRTF(proc);
+                    //Hiển thị AVG sau khi toàn bộ tiến trình hoàn tất
+                    DisplayAVG(res2);
+                    break;
+                case "PS":
+                    // 5. Gọi thuật toán PS
+                    var res3 = await PS(proc);
+                    //Hiển thị AVG sau khi toàn bộ tiến trình hoàn tất
+                    DisplayAVG(res3);
+                    break;
+                case "RR":
+                    // 5. Gọi thuật toán RR, khóa trabar
+                    trBarQuantum.Enabled = false;
+                    var result = await RR(proc, quantum);
+                    //Hiển thị AVG sau khi toàn bộ tiến trình hoàn tất
+                    DisplayAVG(result);
+                    break;
+            }
 
             // Bật lại trạng thái
             btnStart.Enabled = true;
             btnReset.Enabled = true;
         }
 
-        private async void Algo_SJF(List<Process> processes)
-        {
-            var proc = GetProcesses();
-
-            PanelInfor.Controls.Clear();  
-            ClearGanttChart();            
-            ganttSegments.Clear();
-            dgvResult.Rows.Clear();       
-            dgvAVG.Rows.Clear();          
-
-            InitializeResultTable(proc);  
-
-            var result = await SJF(proc);
-            DisplayAVG(result);        
-
-            btnStart.Enabled = true;
-            btnReset.Enabled = true;
-        }
-
-        private async void Algo_SRTF(List<Process> processes)
-        {
-            var proc = GetProcesses();
-
-            PanelInfor.Controls.Clear();
-            ClearGanttChart();
-            ganttSegments.Clear();
-            dgvResult.Rows.Clear();
-            dgvAVG.Rows.Clear();
-
-            InitializeResultTable(proc);
-
-            var result = await SRTF(proc);
-            DisplayAVG(result);
-
-            btnStart.Enabled = true;
-            btnReset.Enabled = true;
-        }
-
-        private async void Algo_PS(List<Process> processes)
-        {
-            var proc = GetProcesses();
-
-            PanelInfor.Controls.Clear();
-            ClearGanttChart();
-            ganttSegments.Clear();
-            dgvResult.Rows.Clear();
-            dgvAVG.Rows.Clear();
-
-            InitializeResultTable(proc);
-
-            var result = await PS(proc);
-            DisplayAVG(result);
-            btnStart.Enabled = true;
-            btnReset.Enabled = true;
-        }
-
-        private async void Algo_RR(List<Process> processes, int quantum)
-        {
-            var proc = GetProcesses();
-
-            PanelInfor.Controls.Clear();
-            ClearGanttChart();
-            ganttSegments.Clear();
-            dgvResult.Rows.Clear();
-            dgvAVG.Rows.Clear();
-
-            InitializeResultTable(proc);
-
-            var result = await RR(proc, quantum);
-            DisplayAVG(result);
-
-            btnStart.Enabled = true;
-            btnReset.Enabled = true;
-        }
-
-
-
+        // Thuật toán FCFS
         private async Task<List<Process>> FCFS(List<Process> processes)
         {
             var all = processes
@@ -455,100 +412,46 @@ namespace Algorithm_Simulator
             int currentTime = 0;
             var result = new List<Process>();
 
-            if (!checkPriority.Checked)
+            var sorted = all.OrderBy(p => p.Arrival).ToList();
+
+            foreach (var p in sorted)
             {
-                // ---------- NON-PREEMPTIVE ----------
-                var sorted = all.OrderBy(p => p.Arrival).ToList();
-
-                foreach (var p in sorted)
+                if (currentTime < p.Arrival)
                 {
-                    if (currentTime < p.Arrival)
-                    {
-                        AddStatus($"{currentTime}s: CPU Trống", Color.Gray);
-                        currentTime = p.Arrival;
-                    }
-
-                    AddStatus($"{currentTime}s: Process {p.Name} bắt đầu chạy", Color.Green);
-
-                    await Task.Delay(GetDelay());
-
-                    p.StartTime = currentTime;
-                    p.CompletionTime = currentTime + p.Burst;
-                    p.TurnAroundTime = p.CompletionTime - p.Arrival;
-                    p.WaitingTime = p.TurnAroundTime - p.Burst;
-
-                    var segment = new Process
-                    {
-                        Name = p.Name,
-                        StartTime = p.StartTime,
-                        Burst = p.Burst,
-                        CompletionTime = p.CompletionTime
-                    };
-
-                    ganttSegments.Add(segment);
-                    AddGanttBlock(segment);
-                    DisplayProcessResult(p);
-                    AddStatus($"{currentTime + p.Burst}s: Process {p.Name} đã kết thúc", Color.Red);
-
-                    currentTime = p.CompletionTime;
-                    result.Add(p);
+                    AddStatus($"{currentTime}s: CPU Trống", Color.Gray);
+                    currentTime = p.Arrival;
                 }
-            }
-            else
-            {
-                // ---------- PREEMPTIVE ----------
-                var unscheduled = all.OrderBy(p => p.Arrival).ToList();
 
-                while (unscheduled.Count > 0)
+                AddStatus($"{currentTime}s: Process {p.Name} bắt đầu chạy", Color.Green);
+
+                await Task.Delay(GetDelay());
+
+                p.StartTime = currentTime;
+                p.CompletionTime = currentTime + p.Burst;
+                p.TurnAroundTime = p.CompletionTime - p.Arrival;
+                p.WaitingTime = p.TurnAroundTime - p.Burst;
+
+                var segment = new Process
                 {
-                    var readyQueue = unscheduled
-                        .Where(p => p.Arrival <= currentTime)
-                        .ToList();
+                    Name = p.Name,
+                    StartTime = p.StartTime,
+                    Burst = p.Burst,
+                    CompletionTime = p.CompletionTime
+                };
 
-                    if (readyQueue.Count == 0)
-                    {
-                        AddStatus($"{currentTime}s: CPU Trống", Color.Gray);
-                        currentTime = unscheduled.Min(p => p.Arrival);
-                        continue;
-                    }
+                ganttSegments.Add(segment);
+                AddGanttBlock(segment);
+                DisplayProcessResult(p);
+                AddStatus($"{currentTime + p.Burst}s: Process {p.Name} đã kết thúc", Color.Red);
 
-                    var next = readyQueue
-                        .OrderBy(p => p.Priority)
-                        .ThenBy(p => p.Arrival)
-                        .First();
-
-                    AddStatus($"{currentTime}s: Process {next.Name} bắt đầu chạy (Priority {next.Priority})", Color.Green);
-
-                    await Task.Delay(GetDelay());
-
-                    next.StartTime = currentTime;
-                    next.CompletionTime = currentTime + next.Burst;
-                    next.TurnAroundTime = next.CompletionTime - next.Arrival;
-                    next.WaitingTime = next.TurnAroundTime - next.Burst;
-
-                    var segment = new Process
-                    {
-                        Name = next.Name,
-                        StartTime = next.StartTime,
-                        Burst = next.Burst,
-                        CompletionTime = next.CompletionTime
-                    };
-
-                    ganttSegments.Add(segment);
-                    AddGanttBlock(segment);
-                    DisplayProcessResult(next);
-                    AddStatus($"{currentTime + next.Burst}s: Process {next.Name} đã kết thúc", Color.Red);
-
-                    currentTime = next.CompletionTime;
-                    unscheduled.Remove(next);
-                    result.Add(next);
-                }
+                currentTime = p.CompletionTime;
+                result.Add(p);
             }
 
             return result.OrderBy(p => p.Name).ToList();
         }
 
-
+        // Thuật toán SJF
         private async Task<List<Process>> SJF(List<Process> processes)
         {
             var all = processes
@@ -564,124 +467,64 @@ namespace Algorithm_Simulator
             var result = new List<Process>();
             int currentTime = 0;
 
-            if (!checkPriority.Checked)
+            var readyQueue = new List<Process>();
+            var notArrived = all.OrderBy(p => p.Arrival).ToList();
+
+            while (result.Count < processes.Count)
             {
-                // ---------- NON-PREEMPTIVE ----------
-                var readyQueue = new List<Process>();
-                var notArrived = all.OrderBy(p => p.Arrival).ToList();
-
-                while (result.Count < processes.Count)
+                // Thêm tiến trình đã đến vào hàng đợi
+                var newlyArrived = notArrived.Where(p => p.Arrival <= currentTime).ToList();
+                foreach (var p in newlyArrived)
                 {
-                    // Thêm tiến trình đã đến vào hàng đợi
-                    var newlyArrived = notArrived.Where(p => p.Arrival <= currentTime).ToList();
-                    foreach (var p in newlyArrived)
-                    {
-                        AddStatus($"{currentTime}s: Process {p.Name} được thêm vào hàng đợi", Color.Blue);
-                        readyQueue.Add(p);
-                    }
-                    notArrived.RemoveAll(p => p.Arrival <= currentTime);
-
-                    if (readyQueue.Count == 0)
-                    {
-                        AddStatus($"{currentTime}s: CPU Trống", Color.Gray);
-                        currentTime = notArrived.First().Arrival;
-                        continue;
-                    }
-
-                    var next = readyQueue
-                        .OrderBy(p => p.Burst)
-                        .ThenBy(p => p.Arrival)
-                        .ThenBy(p => p.Name)
-                        .First();
-
-                    readyQueue.Remove(next);
-
-                    AddStatus($"{currentTime}s: Process {next.Name} bắt đầu chạy", Color.Green);
-                    await Task.Delay(GetDelay());
-
-                    next.StartTime = currentTime;
-                    next.CompletionTime = currentTime + next.Burst;
-                    next.TurnAroundTime = next.CompletionTime - next.Arrival;
-                    next.WaitingTime = next.TurnAroundTime - next.Burst;
-
-                    var segment = new Process
-                    {
-                        Name = next.Name,
-                        StartTime = currentTime,
-                        Burst = next.Burst,
-                        CompletionTime = next.CompletionTime
-                    };
-                    ganttSegments.Add(segment);
-                    AddGanttBlock(segment);
-                    DisplayProcessResult(next);
-
-                    AddStatus($"{next.CompletionTime}s: Process {next.Name} đã kết thúc", Color.Green);
-
-                    currentTime = next.CompletionTime;
-                    result.Add(next);
+                    AddStatus($"{currentTime}s: Process {p.Name} được thêm vào hàng đợi", Color.Blue);
+                    readyQueue.Add(p);
                 }
-            }
-            else
-            {
-                // ---------- PREEMPTIVE ----------
-                var readyQueue = new List<Process>();
-                var notArrived = all.OrderBy(p => p.Arrival).ToList();
+                notArrived.RemoveAll(p => p.Arrival <= currentTime);
 
-                while (result.Count < processes.Count)
+                if (readyQueue.Count == 0)
                 {
-                    var newlyArrived = notArrived.Where(p => p.Arrival <= currentTime).ToList();
-                    foreach (var p in newlyArrived)
-                    {
-                        AddStatus($"{currentTime}s: Process {p.Name} được thêm vào hàng đợi",Color.Blue);
-                        readyQueue.Add(p);
-                    }
-                    notArrived.RemoveAll(p => p.Arrival <= currentTime);
-
-                    if (readyQueue.Count == 0)
-                    {
-                        AddStatus($"{currentTime}s: CPU Trống", Color.Gray);
-                        currentTime = notArrived.First().Arrival;
-                        continue;
-                    }
-
-                    var next = readyQueue
-                        .OrderBy(p => p.Priority)
-                        .ThenBy(p => p.Arrival)
-                        .ThenBy(p => p.Name)
-                        .First();
-
-                    readyQueue.Remove(next);
-
-                    AddStatus($"{currentTime}s: Process {next.Name} bắt đầu chạy (Priority {next.Priority})", Color.Green);
-                    await Task.Delay(GetDelay());
-
-                    next.StartTime = currentTime;
-                    next.CompletionTime = currentTime + next.Burst;
-                    next.TurnAroundTime = next.CompletionTime - next.Arrival;
-                    next.WaitingTime = next.TurnAroundTime - next.Burst;
-
-                    var segment = new Process
-                    {
-                        Name = next.Name,
-                        StartTime = currentTime,
-                        Burst = next.Burst,
-                        CompletionTime = next.CompletionTime
-                    };
-                    ganttSegments.Add(segment);
-                    AddGanttBlock(segment);
-                    DisplayProcessResult(next);
-
-                    AddStatus($"{next.CompletionTime}s: Process {next.Name} đã kết thúc", Color.Red);
-
-                    currentTime = next.CompletionTime;
-                    result.Add(next);
+                    AddStatus($"{currentTime}s: CPU Trống", Color.Gray);
+                    currentTime = notArrived.First().Arrival;
+                    continue;
                 }
+
+                var next = readyQueue
+                    .OrderBy(p => p.Burst)
+                    .ThenBy(p => p.Arrival)
+                    .ThenBy(p => p.Name)
+                    .First();
+
+                readyQueue.Remove(next);
+
+                AddStatus($"{currentTime}s: Process {next.Name} bắt đầu chạy", Color.Green);
+                await Task.Delay(GetDelay());
+
+                next.StartTime = currentTime;
+                next.CompletionTime = currentTime + next.Burst;
+                next.TurnAroundTime = next.CompletionTime - next.Arrival;
+                next.WaitingTime = next.TurnAroundTime - next.Burst;
+
+                var segment = new Process
+                {
+                    Name = next.Name,
+                    StartTime = currentTime,
+                    Burst = next.Burst,
+                    CompletionTime = next.CompletionTime
+                };
+                ganttSegments.Add(segment);
+                AddGanttBlock(segment);
+                DisplayProcessResult(next);
+
+                AddStatus($"{next.CompletionTime}s: Process {next.Name} đã kết thúc", Color.Green);
+
+                currentTime = next.CompletionTime;
+                result.Add(next);
             }
 
             return result.OrderBy(p => p.Name).ToList();
         }
 
-
+        // Thuật toán SRTF
         private async Task<List<Process>> SRTF(List<Process> processes)
         {
             processes = processes.OrderBy(p => p.Arrival).ToList();
@@ -711,24 +554,10 @@ namespace Algorithm_Simulator
 
                 Process current = null;
 
-                if (checkPriority.Checked)
-                {
-                    // ---------- PREEMPTIVE ----------
-                    current = available
-                        .OrderBy(p => p.Priority)
-                        .ThenBy(p => remainingTime[p.Name])
-                        .ThenBy(p => p.Arrival)
-                        .FirstOrDefault();
-                }
-                else
-                {
-                    // ---------- NON-PREEMPTIVE ----------
-                    current = available
+                current = available
                         .OrderBy(p => remainingTime[p.Name])
                         .ThenBy(p => p.Arrival)
                         .FirstOrDefault();
-                }
-
                 if (current != null)
                 {
                     if (current.StartTime == -1)
@@ -821,177 +650,124 @@ namespace Algorithm_Simulator
             return result.OrderBy(p => p.Name).ToList();
         }
 
+        // Thuật toán Priority Scheduling
         private async Task<List<Process>> PS(List<Process> processes)
         {
             var result = new List<Process>();
             int currentTime = 0;
 
-            if (!checkPriority.Checked)
+            var all = processes.Select(p => new Process
             {
-                // ---------- NON-PREEMPTIVE ----------
-                var readyQueue = new List<Process>();
-                var waitingList = processes.OrderBy(p => p.Arrival).ToList();
+                Name = p.Name,
+                Arrival = p.Arrival,
+                Burst = p.Burst,
+                Priority = p.Priority,
+                StartTime = -1
+            }).ToList();
 
-                while (result.Count < processes.Count)
+            var remainingTime = all.ToDictionary(p => p.Name, p => p.Burst);
+            int time = 0, completed = 0;
+            Process currentSegment = null;
+            string lastRunning = "-";
+
+            while (completed < all.Count)
+            {
+                var available = all
+                    .Where(p => p.Arrival <= time && remainingTime[p.Name] > 0)
+                    .OrderBy(p => p.Priority)
+                    .ThenBy(p => p.Arrival)
+                    .ToList();
+
+                Process current = available.FirstOrDefault();
+
+                if (current != null)
                 {
-                    readyQueue.AddRange(waitingList.Where(p => p.Arrival <= currentTime).ToList());
-                    waitingList.RemoveAll(p => p.Arrival <= currentTime);
+                    if (current.StartTime == -1)
+                        current.StartTime = time;
 
-                    if (readyQueue.Count == 0)
+                    if (lastRunning != current.Name)
                     {
-                        AddStatus($"{currentTime}s: CPU Trống", Color.Gray);
-                        await Task.Delay(GetDelay());
-                        currentTime++;
+                        if (currentSegment != null && lastRunning != "-")
+                        {
+                            currentSegment.CompletionTime = time;
+                            currentSegment.Burst = currentSegment.CompletionTime - currentSegment.StartTime;
+                            ganttSegments.Add(currentSegment);
+                            AddGanttBlock(currentSegment);
+                        }
+
+                        currentSegment = new Process
+                        {
+                            Name = current.Name,
+                            StartTime = time
+                        };
+
+                        AddStatus($"{time}s: Process {current.Name} bắt đầu chạy (Priority {current.Priority})", Color.Green);
+                    }
+
+                    await Task.Delay(GetDelay());
+                    remainingTime[current.Name]--;
+                    time++;
+
+                    if (remainingTime[current.Name] == 0)
+                    {
+                        if (currentSegment != null)
+                        {
+                            currentSegment.CompletionTime = time;
+                            currentSegment.Burst = currentSegment.CompletionTime - currentSegment.StartTime;
+                            ganttSegments.Add(currentSegment);
+                            AddGanttBlock(currentSegment);
+                            currentSegment = null;
+                        }
+
+                        current.CompletionTime = time;
+                        current.TurnAroundTime = time - current.Arrival;
+                        current.WaitingTime = current.TurnAroundTime - current.Burst;
+
+                        DisplayProcessResult(current);
+                        AddStatus($"{time}s: Process {current.Name} đã kết thúc", Color.Red);
+                        result.Add(current);
+                        completed++;
+
+                        lastRunning = "-";
                         continue;
                     }
 
-                    var next = readyQueue
-                        .OrderBy(p => p.Priority)
-                        .ThenBy(p => p.Arrival)
-                        .First();
-
-                    readyQueue.Remove(next);
-
-                    AddStatus($"{currentTime}s: Process {next.Name} bắt đầu chạy (Priority {next.Priority})", Color.Green);
-                    await Task.Delay(GetDelay());
-
-                    next.StartTime = currentTime;
-                    next.CompletionTime = currentTime + next.Burst;
-                    next.TurnAroundTime = next.CompletionTime - next.Arrival;
-                    next.WaitingTime = next.StartTime - next.Arrival;
-
-                    var segment = new Process
+                    lastRunning = current.Name;
+                }
+                else
+                {
+                    if (lastRunning != "-")
                     {
-                        Name = next.Name,
-                        StartTime = next.StartTime,
-                        Burst = next.Burst,
-                        CompletionTime = next.CompletionTime
-                    };
-                    ganttSegments.Add(segment);
-                    AddGanttBlock(segment);
+                        if (currentSegment != null)
+                        {
+                            currentSegment.CompletionTime = time;
+                            currentSegment.Burst = currentSegment.CompletionTime - currentSegment.StartTime;
+                            ganttSegments.Add(currentSegment);
+                            AddGanttBlock(currentSegment);
+                            currentSegment = null;
+                        }
 
-                    DisplayProcessResult(next);
-                    AddStatus($"{next.CompletionTime}s: Process {next.Name} đã kết thúc", Color.Red);
+                        AddStatus($"{time}s: CPU Trống", Color.Gray);
+                    }
 
-                    currentTime = next.CompletionTime;
-                    result.Add(next);
+                    await Task.Delay(GetDelay());
+                    time++;
+                    lastRunning = "-";
                 }
             }
-            else
+
+            if (currentSegment != null)
             {
-                // ---------- PREEMPTIVE ----------
-                var all = processes.Select(p => new Process
-                {
-                    Name = p.Name,
-                    Arrival = p.Arrival,
-                    Burst = p.Burst,
-                    Priority = p.Priority,
-                    StartTime = -1
-                }).ToList();
-
-                var remainingTime = all.ToDictionary(p => p.Name, p => p.Burst);
-                int time = 0, completed = 0;
-                Process currentSegment = null;
-                string lastRunning = "-";
-
-                while (completed < all.Count)
-                {
-                    var available = all
-                        .Where(p => p.Arrival <= time && remainingTime[p.Name] > 0)
-                        .OrderBy(p => p.Priority)
-                        .ThenBy(p => p.Arrival)
-                        .ToList();
-
-                    Process current = available.FirstOrDefault();
-
-                    if (current != null)
-                    {
-                        if (current.StartTime == -1)
-                            current.StartTime = time;
-
-                        if (lastRunning != current.Name)
-                        {
-                            if (currentSegment != null && lastRunning != "-")
-                            {
-                                currentSegment.CompletionTime = time;
-                                currentSegment.Burst = currentSegment.CompletionTime - currentSegment.StartTime;
-                                ganttSegments.Add(currentSegment);
-                                AddGanttBlock(currentSegment);
-                            }
-
-                            currentSegment = new Process
-                            {
-                                Name = current.Name,
-                                StartTime = time
-                            };
-
-                            AddStatus($"{time}s: Process {current.Name} bắt đầu chạy (Priority {current.Priority})", Color.Green);
-                        }
-
-                        await Task.Delay(GetDelay());
-                        remainingTime[current.Name]--;
-                        time++;
-
-                        if (remainingTime[current.Name] == 0)
-                        {
-                            if (currentSegment != null)
-                            {
-                                currentSegment.CompletionTime = time;
-                                currentSegment.Burst = currentSegment.CompletionTime - currentSegment.StartTime;
-                                ganttSegments.Add(currentSegment);
-                                AddGanttBlock(currentSegment);
-                                currentSegment = null;
-                            }
-
-                            current.CompletionTime = time;
-                            current.TurnAroundTime = time - current.Arrival;
-                            current.WaitingTime = current.TurnAroundTime - current.Burst;
-
-                            DisplayProcessResult(current);
-                            AddStatus($"{time}s: Process {current.Name} đã kết thúc", Color.Red);
-                            result.Add(current);
-                            completed++;
-
-                            lastRunning = "-";
-                            continue;
-                        }
-
-                        lastRunning = current.Name;
-                    }
-                    else
-                    {
-                        if (lastRunning != "-")
-                        {
-                            if (currentSegment != null)
-                            {
-                                currentSegment.CompletionTime = time;
-                                currentSegment.Burst = currentSegment.CompletionTime - currentSegment.StartTime;
-                                ganttSegments.Add(currentSegment);
-                                AddGanttBlock(currentSegment);
-                                currentSegment = null;
-                            }
-
-                            AddStatus($"{time}s: CPU Trống", Color.Gray);
-                        }
-
-                        await Task.Delay(GetDelay());
-                        time++;
-                        lastRunning = "-";
-                    }
-                }
-
-                if (currentSegment != null)
-                {
-                    currentSegment.CompletionTime = currentTime;
-                    currentSegment.Burst = currentSegment.CompletionTime - currentSegment.StartTime;
-                    ganttSegments.Add(currentSegment);
-                    AddGanttBlock(currentSegment);
-                }
+                currentSegment.CompletionTime = currentTime;
+                currentSegment.Burst = currentSegment.CompletionTime - currentSegment.StartTime;
+                ganttSegments.Add(currentSegment);
+                AddGanttBlock(currentSegment);
             }
 
             return result.OrderBy(p => p.Name).ToList();
         }
 
+        // Thuật toán Round Robin
         private async Task<List<Process>> RR(List<Process> processes, int quantum)
         {
             processes = processes.OrderBy(p => p.Arrival).ToList();
@@ -1037,24 +813,7 @@ namespace Algorithm_Simulator
 
                 Process current;
 
-                if (checkPriority.Checked)
-                {
-                    var list = readyQueue.ToList();
-                    readyQueue.Clear();
-
-                    current = list
-                        .OrderBy(p => p.Priority)
-                        .ThenBy(p => p.Arrival)
-                        .First();
-
-                    foreach (var p in list)
-                        if (p != current)
-                            readyQueue.Enqueue(p);
-                }
-                else
-                {
-                    current = readyQueue.Dequeue();
-                }
+                current = readyQueue.Dequeue();
 
                 if (current.StartTime == -1)
                     current.StartTime = time;
@@ -1095,6 +854,7 @@ namespace Algorithm_Simulator
                 if (remainingTime[current.Name] > 0)
                 {
                     readyQueue.Enqueue(current);
+                    AddStatus($"{time}s: Process {current.Name} quay lại hàng đợi", Color.Gold);
                 }
                 else
                 {
@@ -1108,10 +868,10 @@ namespace Algorithm_Simulator
                     completed++;
                 }
 
+
                 lastRunning = current.Name;
             }
 
-            // Đoạn cuối nếu còn
             if (currentSegment != null)
             {
                 currentSegment.CompletionTime = time;
@@ -1119,8 +879,10 @@ namespace Algorithm_Simulator
                 ganttSegments.Add(currentSegment);
                 AddGanttBlock(currentSegment);
             }
+            trBarQuantum.Enabled = true;
 
             return result.OrderBy(p => p.Name).ToList();
+
         }
 
         private void DisplayProcessResult(Process p)
@@ -1193,11 +955,8 @@ namespace Algorithm_Simulator
             box.Text = (p.Name == "-") ? "IDLE" : p.Name;
             box.TextAlign = ContentAlignment.MiddleCenter;
 
-            // Màu sắc theo loại tiến trình
-            if (p.Name == "-")
-                box.BackColor = Color.LightGray;
-            else
-                box.BackColor = Color.LightBlue;
+            // Màu sắc tiến trình
+            box.BackColor = Color.LightBlue;
 
             box.BorderStyle = BorderStyle.FixedSingle;
             box.Location = new Point(ganttX, 10);
@@ -1213,7 +972,6 @@ namespace Algorithm_Simulator
             endTime.AutoSize = true;
             PanelGantt.Controls.Add(endTime);
         }
-
 
         private void InitializeResultTable(List<Process> processes)
         {

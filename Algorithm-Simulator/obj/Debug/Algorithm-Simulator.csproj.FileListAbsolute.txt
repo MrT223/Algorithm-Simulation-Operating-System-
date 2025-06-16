@@ -41,7 +41,6 @@ C:\Study\HDH\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\bin\Debu
 C:\Study\HDH\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.csproj.AssemblyReference.cache
 C:\Study\HDH\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.exe.config
 C:\Study\HDH\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.MainForm.resources
-C:\Study\HDH\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.PFSR_Form.resources
 C:\Study\HDH\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.FormBanker.resources
 C:\Study\HDH\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.FormB.resources
 C:\Study\HDH\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.formD.resources
@@ -50,3 +49,4 @@ C:\Study\HDH\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debu
 C:\Study\HDH\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.csproj.CoreCompileInputs.cache
 C:\Study\HDH\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.exe
 C:\Study\HDH\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm-Simulator.pdb
+C:\Study\HDH\Algorithm-Simulation-Operating-System-\Algorithm-Simulator\obj\Debug\Algorithm_Simulator.FormC.resources
