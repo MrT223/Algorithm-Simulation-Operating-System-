@@ -108,7 +108,7 @@
             // 
             this.btnMax.Enabled = false;
             this.btnMax.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMax.Location = new System.Drawing.Point(200, 221);
+            this.btnMax.Location = new System.Drawing.Point(200, 157);
             this.btnMax.Name = "btnMax";
             this.btnMax.Size = new System.Drawing.Size(109, 31);
             this.btnMax.TabIndex = 23;
@@ -129,7 +129,7 @@
             // 
             this.txtMax.Enabled = false;
             this.txtMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMax.Location = new System.Drawing.Point(17, 226);
+            this.txtMax.Location = new System.Drawing.Point(17, 161);
             this.txtMax.Name = "txtMax";
             this.txtMax.Size = new System.Drawing.Size(154, 27);
             this.txtMax.TabIndex = 21;
@@ -169,7 +169,7 @@
             // 
             this.lblMax.AutoSize = true;
             this.lblMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMax.Location = new System.Drawing.Point(6, 203);
+            this.lblMax.Location = new System.Drawing.Point(6, 138);
             this.lblMax.Name = "lblMax";
             this.lblMax.Size = new System.Drawing.Size(91, 20);
             this.lblMax.TabIndex = 11;
@@ -179,7 +179,7 @@
             // 
             this.lblAlloc.AutoSize = true;
             this.lblAlloc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlloc.Location = new System.Drawing.Point(6, 138);
+            this.lblAlloc.Location = new System.Drawing.Point(6, 203);
             this.lblAlloc.Name = "lblAlloc";
             this.lblAlloc.Size = new System.Drawing.Size(133, 20);
             this.lblAlloc.TabIndex = 9;
@@ -202,7 +202,7 @@
             // 
             this.btnAlloc.Enabled = false;
             this.btnAlloc.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlloc.Location = new System.Drawing.Point(200, 156);
+            this.btnAlloc.Location = new System.Drawing.Point(200, 222);
             this.btnAlloc.Name = "btnAlloc";
             this.btnAlloc.Size = new System.Drawing.Size(109, 31);
             this.btnAlloc.TabIndex = 26;
@@ -234,7 +234,7 @@
             // 
             this.txtAlloc.Enabled = false;
             this.txtAlloc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAlloc.Location = new System.Drawing.Point(17, 161);
+            this.txtAlloc.Location = new System.Drawing.Point(17, 226);
             this.txtAlloc.Name = "txtAlloc";
             this.txtAlloc.Size = new System.Drawing.Size(154, 27);
             this.txtAlloc.TabIndex = 19;
@@ -351,7 +351,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(2, 17);
+            this.label1.Location = new System.Drawing.Point(508, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 20);
             this.label1.TabIndex = 1;
@@ -371,7 +371,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(508, 17);
+            this.label2.Location = new System.Drawing.Point(2, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 20);
             this.label2.TabIndex = 1;
@@ -380,7 +380,7 @@
             // richAlloc
             // 
             this.richAlloc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richAlloc.Location = new System.Drawing.Point(6, 40);
+            this.richAlloc.Location = new System.Drawing.Point(512, 40);
             this.richAlloc.Name = "richAlloc";
             this.richAlloc.Size = new System.Drawing.Size(500, 182);
             this.richAlloc.TabIndex = 4;
@@ -398,7 +398,7 @@
             // richMax
             // 
             this.richMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richMax.Location = new System.Drawing.Point(512, 40);
+            this.richMax.Location = new System.Drawing.Point(6, 40);
             this.richMax.Name = "richMax";
             this.richMax.Size = new System.Drawing.Size(500, 182);
             this.richMax.TabIndex = 1;
