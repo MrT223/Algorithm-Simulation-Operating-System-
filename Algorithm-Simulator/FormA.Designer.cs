@@ -478,7 +478,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormBanker";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form3";
+            this.Text = "Banker Form";
             this.Load += new System.EventHandler(this.FormBanker_Load);
             this.grpBoxOutput.ResumeLayout(false);
             this.grpBoxOutput.PerformLayout();

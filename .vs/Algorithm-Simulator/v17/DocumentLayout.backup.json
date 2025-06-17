@@ -3,52 +3,20 @@
   "WorkspaceRootPath": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\algorithm-simulator\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\algorithm-simulator\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|c:\\study\\hdh\\algorithm-simulation-operating-system-\\algorithm-simulator\\formc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|c:\\study\\hdh\\algorithm-simulation-operating-system-\\algorithm-simulator\\frmmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\frmmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|c:\\study\\hdh\\algorithm-simulation-operating-system-\\algorithm-simulator\\formb.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formb.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|c:\\study\\hdh\\algorithm-simulation-operating-system-\\algorithm-simulator\\formb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|c:\\study\\hdh\\algorithm-simulation-operating-system-\\algorithm-simulator\\formd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\algorithm-simulator\\formc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\algorithm-simulator\\formb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\algorithm-simulator\\forma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\forma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|c:\\study\\hdh\\algorithm-simulation-operating-system-\\algorithm-simulator\\formd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|c:\\study\\hdh\\algorithm-simulation-operating-system-\\algorithm-simulator\\formc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|c:\\study\\hdh\\algorithm-simulation-operating-system-\\algorithm-simulator\\formc.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\formc.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|c:\\study\\hdh\\algorithm-simulation-operating-system-\\algorithm-simulator\\forma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81A29C6C-5A10-4211-9439-0DCA4CFCA062}|Algorithm-Simulator\\Algorithm-Simulator.csproj|solutionrelative:algorithm-simulator\\forma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,154 +58,48 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmMain.Designer.cs",
-              "DocumentMoniker": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\frmMain.Designer.cs",
-              "RelativeDocumentMoniker": "Algorithm-Simulator\\frmMain.Designer.cs",
-              "ToolTip": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\frmMain.Designer.cs",
-              "RelativeToolTip": "Algorithm-Simulator\\frmMain.Designer.cs",
-              "ViewState": "AgIAACsBAAAAAAAAAAAAADoBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T06:26:27.342Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FormB.Designer.cs",
-              "DocumentMoniker": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormB.Designer.cs",
-              "RelativeDocumentMoniker": "Algorithm-Simulator\\FormB.Designer.cs",
-              "ToolTip": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormB.Designer.cs",
-              "RelativeToolTip": "Algorithm-Simulator\\FormB.Designer.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwBIAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T06:25:00.14Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FormB.cs [Design]",
-              "DocumentMoniker": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormB.cs",
-              "RelativeDocumentMoniker": "Algorithm-Simulator\\FormB.cs",
-              "ToolTip": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormB.cs [Design]",
-              "RelativeToolTip": "Algorithm-Simulator\\FormB.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T06:16:56.165Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FormD.cs",
-              "DocumentMoniker": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\formD.cs",
-              "RelativeDocumentMoniker": "Algorithm-Simulator\\formD.cs",
-              "ToolTip": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\formD.cs",
-              "RelativeToolTip": "Algorithm-Simulator\\formD.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMgBAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T06:15:26.606Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "FormD.cs [Design]",
               "DocumentMoniker": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\formD.cs",
               "RelativeDocumentMoniker": "Algorithm-Simulator\\formD.cs",
               "ToolTip": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\formD.cs [Design]",
               "RelativeToolTip": "Algorithm-Simulator\\formD.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T06:15:19.409Z",
+              "WhenOpened": "2025-06-17T06:49:53.99Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "FormC.Designer.cs",
-              "DocumentMoniker": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormC.Designer.cs",
-              "RelativeDocumentMoniker": "Algorithm-Simulator\\FormC.Designer.cs",
-              "ToolTip": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormC.Designer.cs",
-              "RelativeToolTip": "Algorithm-Simulator\\FormC.Designer.cs",
-              "ViewState": "AgIAAPkAAAAAAAAAAAAwwAABAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T05:42:24.775Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FormC.cs",
-              "DocumentMoniker": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormC.cs",
-              "RelativeDocumentMoniker": "Algorithm-Simulator\\FormC.cs",
-              "ToolTip": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormC.cs",
-              "RelativeToolTip": "Algorithm-Simulator\\FormC.cs",
-              "ViewState": "AgIAAOUAAAAAAAAAAAAxwPgAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T05:06:22.145Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "FormB.cs [Design]",
+              "DocumentMoniker": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormB.cs",
+              "RelativeDocumentMoniker": "Algorithm-Simulator\\FormB.cs",
+              "ToolTip": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormB.cs [Design]",
+              "RelativeToolTip": "Algorithm-Simulator\\FormB.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T06:16:56.165Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "FormC.cs [Design]",
               "DocumentMoniker": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormC.cs",
               "RelativeDocumentMoniker": "Algorithm-Simulator\\FormC.cs",
               "ToolTip": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormC.cs [Design]",
               "RelativeToolTip": "Algorithm-Simulator\\FormC.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T05:05:18.132Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-17T05:05:18.132Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmMain.cs",
-              "DocumentMoniker": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\frmMain.cs",
-              "RelativeDocumentMoniker": "Algorithm-Simulator\\frmMain.cs",
-              "ToolTip": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\frmMain.cs",
-              "RelativeToolTip": "Algorithm-Simulator\\frmMain.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T11:50:41.004Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmMain.cs [Design]",
-              "DocumentMoniker": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\frmMain.cs",
-              "RelativeDocumentMoniker": "Algorithm-Simulator\\frmMain.cs",
-              "ToolTip": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\frmMain.cs [Design]",
-              "RelativeToolTip": "Algorithm-Simulator\\frmMain.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T11:42:21.675Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "FormA.cs",
-              "DocumentMoniker": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormA.cs",
-              "RelativeDocumentMoniker": "Algorithm-Simulator\\FormA.cs",
-              "ToolTip": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormA.cs",
-              "RelativeToolTip": "Algorithm-Simulator\\FormA.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFgBAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T11:46:21.828Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "FormA.cs [Design]",
               "DocumentMoniker": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormA.cs",
               "RelativeDocumentMoniker": "Algorithm-Simulator\\FormA.cs",
               "ToolTip": "C:\\Study\\HDH\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormA.cs [Design]",
               "RelativeToolTip": "Algorithm-Simulator\\FormA.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T11:41:39.718Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-17T06:49:04.274Z"
             }
           ]
         }

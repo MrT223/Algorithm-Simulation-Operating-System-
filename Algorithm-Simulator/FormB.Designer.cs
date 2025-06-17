@@ -539,7 +539,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormB";
+            this.Text = "CPU Form";
             this.Load += new System.EventHandler(this.CPU_Distribution_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAVG)).EndInit();

@@ -306,7 +306,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "formD";
+            this.Text = "Disk Form";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

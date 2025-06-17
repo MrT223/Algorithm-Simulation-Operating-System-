@@ -35,6 +35,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblE = new System.Windows.Forms.Label();
             this.lblmemD = new System.Windows.Forms.Label();
             this.lblmemC = new System.Windows.Forms.Label();
@@ -43,19 +48,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblmember = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnA
@@ -86,7 +86,7 @@
             // 
             this.btnD.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnD.Location = new System.Drawing.Point(894, 518);
+            this.btnD.Location = new System.Drawing.Point(899, 532);
             this.btnD.Name = "btnD";
             this.btnD.Size = new System.Drawing.Size(210, 110);
             this.btnD.TabIndex = 2;
@@ -147,6 +147,56 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(788, 561);
             this.panel1.TabIndex = 6;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::Algorithm_Simulator.Properties.Resources._3dgifmaker48519;
+            this.pictureBox5.Location = new System.Drawing.Point(25, 417);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(144, 127);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 11;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Algorithm_Simulator.Properties.Resources._3dgifmaker02628;
+            this.pictureBox4.Location = new System.Drawing.Point(617, 336);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(144, 127);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 10;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Algorithm_Simulator.Properties.Resources._3dgifmaker95759;
+            this.pictureBox3.Location = new System.Drawing.Point(617, 174);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(144, 126);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Algorithm_Simulator.Properties.Resources._3dgifmaker37600;
+            this.pictureBox2.Location = new System.Drawing.Point(25, 256);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(144, 127);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Algorithm_Simulator.Properties.Resources._3dgifmaker30506;
+            this.pictureBox1.Location = new System.Drawing.Point(25, 97);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(144, 127);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // lblE
             // 
@@ -227,56 +277,6 @@
             this.panel3.Size = new System.Drawing.Size(254, 41);
             this.panel3.TabIndex = 7;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::Algorithm_Simulator.Properties.Resources._3dgifmaker48519;
-            this.pictureBox5.Location = new System.Drawing.Point(25, 417);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(144, 127);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 11;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Algorithm_Simulator.Properties.Resources._3dgifmaker02628;
-            this.pictureBox4.Location = new System.Drawing.Point(617, 336);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(144, 127);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Algorithm_Simulator.Properties.Resources._3dgifmaker95759;
-            this.pictureBox3.Location = new System.Drawing.Point(617, 174);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(144, 126);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Algorithm_Simulator.Properties.Resources._3dgifmaker37600;
-            this.pictureBox2.Location = new System.Drawing.Point(25, 256);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(144, 127);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Algorithm_Simulator.Properties.Resources._3dgifmaker30506;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 97);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(144, 127);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -297,15 +297,15 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

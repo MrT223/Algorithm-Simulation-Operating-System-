@@ -265,7 +265,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PFSR_Form";
+            this.Text = "PFSR Form";
             this.grBoxInp.ResumeLayout(false);
             this.grBoxInp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
