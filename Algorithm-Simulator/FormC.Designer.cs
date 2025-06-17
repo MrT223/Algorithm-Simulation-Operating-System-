@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grBoxInp = new System.Windows.Forms.GroupBox();
+            this.btnReset = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCreate = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.chkStepByStep = new System.Windows.Forms.CheckBox();
             this.btnRestart = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
@@ -44,7 +46,6 @@
             this.btnLRU = new System.Windows.Forms.Button();
             this.btnFIFO = new System.Windows.Forms.Button();
             this.btnOPT = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.grBoxInp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -53,6 +54,7 @@
             // 
             // grBoxInp
             // 
+            this.grBoxInp.Controls.Add(this.btnReset);
             this.grBoxInp.Controls.Add(this.label2);
             this.grBoxInp.Controls.Add(this.label1);
             this.grBoxInp.Controls.Add(this.btnCreate);
@@ -65,6 +67,17 @@
             this.grBoxInp.TabIndex = 0;
             this.grBoxInp.TabStop = false;
             this.grBoxInp.Text = "Input";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(255, 103);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(91, 37);
+            this.btnReset.TabIndex = 5;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // label2
             // 
@@ -89,7 +102,7 @@
             // btnCreate
             // 
             this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.Location = new System.Drawing.Point(246, 52);
+            this.btnCreate.Location = new System.Drawing.Point(255, 44);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(91, 37);
             this.btnCreate.TabIndex = 2;
@@ -148,10 +161,22 @@
             this.groupBox2.Controls.Add(this.btnStart);
             this.groupBox2.Location = new System.Drawing.Point(26, 214);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(335, 132);
+            this.groupBox2.Size = new System.Drawing.Size(320, 132);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Run";
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Turquoise;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(220, 43);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(91, 46);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // chkStepByStep
             // 
@@ -166,9 +191,9 @@
             // btnRestart
             // 
             this.btnRestart.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestart.Location = new System.Drawing.Point(132, 43);
+            this.btnRestart.Location = new System.Drawing.Point(109, 43);
             this.btnRestart.Name = "btnRestart";
-            this.btnRestart.Size = new System.Drawing.Size(82, 46);
+            this.btnRestart.Size = new System.Drawing.Size(95, 46);
             this.btnRestart.TabIndex = 5;
             this.btnRestart.Text = "Restart";
             this.btnRestart.UseVisualStyleBackColor = true;
@@ -177,9 +202,9 @@
             // btnStart
             // 
             this.btnStart.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(16, 43);
+            this.btnStart.Location = new System.Drawing.Point(6, 43);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(82, 46);
+            this.btnStart.Size = new System.Drawing.Size(97, 46);
             this.btnStart.TabIndex = 4;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -229,17 +254,6 @@
             this.btnOPT.UseVisualStyleBackColor = true;
             this.btnOPT.Click += new System.EventHandler(this.btnOPT_Click);
             // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(232, 43);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(82, 46);
-            this.btnExit.TabIndex = 7;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // FormC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -281,5 +295,6 @@
         private System.Windows.Forms.CheckBox chkStepByStep;
         private System.Windows.Forms.Button btnRestart;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnReset;
     }
 }

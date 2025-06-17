@@ -101,6 +101,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -114,6 +115,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3dgifmaker30506.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3dgifmaker37600.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3dgifmaker95759.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3dgifmaker02628.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3dgifmaker48519.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

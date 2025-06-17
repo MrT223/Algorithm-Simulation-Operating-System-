@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnReset = new System.Windows.Forms.Button();
             this.btnLoadInput = new System.Windows.Forms.Button();
             this.txtHead = new System.Windows.Forms.TextBox();
             this.lnType = new System.Windows.Forms.Label();
@@ -43,12 +42,13 @@
             this.btnCSCAN = new System.Windows.Forms.Button();
             this.btnSCAN = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.lbRequests = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
             this.lbHead = new System.Windows.Forms.Label();
             this.lbInput1 = new System.Windows.Forms.Label();
             this.lbInput2 = new System.Windows.Forms.Label();
             this.lbProgress = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -68,18 +68,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(623, 687);
             this.panel1.TabIndex = 0;
-            // 
-            // btnReset
-            // 
-            this.btnReset.Enabled = false;
-            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(329, 205);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(110, 38);
-            this.btnReset.TabIndex = 11;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnLoadInput
             // 
@@ -226,6 +214,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Khởi tạo input";
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Turquoise;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(445, 205);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(110, 38);
+            this.btnExit.TabIndex = 17;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // lbRequests
             // 
             this.lbRequests.AutoSize = true;
@@ -236,6 +236,18 @@
             this.lbRequests.Size = new System.Drawing.Size(427, 20);
             this.lbRequests.TabIndex = 1;
             this.lbRequests.Text = "Nhập các yêu cầu truy cập đĩa (cách nhau bằng |)";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Enabled = false;
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(329, 205);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(110, 38);
+            this.btnReset.TabIndex = 11;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // lbHead
             // 
@@ -269,7 +281,6 @@
             this.lbInput2.TabIndex = 3;
             this.lbInput2.Text = "Head";
             this.lbInput2.Visible = false;
-            this.lbInput2.Click += new System.EventHandler(this.lbInput2_Click);
             // 
             // lbProgress
             // 
@@ -282,17 +293,6 @@
             this.lbProgress.TabIndex = 5;
             this.lbProgress.Text = "Progress";
             this.lbProgress.Visible = false;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(459, 205);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(110, 38);
-            this.btnExit.TabIndex = 17;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FormD
             // 

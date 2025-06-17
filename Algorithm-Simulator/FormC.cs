@@ -25,17 +25,32 @@ namespace Algorithm_Simulator
         {
             InitializeComponent();
             MainForm = callingForm;
+            DisableAlgorithmButtons();
+            DisableStartRestartButtons();
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(txtStep.Text, out n) || !int.TryParse(txtPage.Text, out h))
             {
-                MessageBox.Show("Vui lòng nhập số hợp lệ!");
+                MessageBox.Show("Vui lòng nhập số nguyên hợp lệ cho bước và số khung!", "Lỗi nhập liệu");
+                return;
+            }
+            if (n <= 0 || h <= 0)
+            {
+                MessageBox.Show("Giá trị phải lớn hơn 0!", "Lỗi nhập liệu");
+                return;
+            }
+            if (n > 20 || h > 10)
+            {
+                MessageBox.Show("Giá trị quá lớn! Tối đa: 20 bước, 10 khung.", "Cảnh báo");
                 return;
             }
             CreateGrid(n, h);
+            EnableAlgorithmButtons();
+            DisableStartRestartButtons();
         }
+
         private void CreateGrid(int columns, int rows)
         {
             dataGridView.Columns.Clear();
@@ -68,30 +83,77 @@ namespace Algorithm_Simulator
             dataGridView.CurrentCell = null;
         }
 
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            var confirm = MessageBox.Show("Bạn có chắc chắn muốn reset hoàn toàn?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (confirm == DialogResult.Yes)
+            {
+                dataGridView.Columns.Clear();
+                dataGridView.Rows.Clear();
+
+                n = 0;
+                h = 0;
+                currentStep = 0;
+                selectedAlgorithm = null;
+                pages.Clear();
+                frame = null;
+                pointer = 0;
+                fifoQueue.Clear();
+                lruQueue.Clear();
+                useBit = null;
+
+                btnStart.Text = "Start";
+                DisableAlgorithmButtons();
+                DisableStartRestartButtons();
+                ResetAlgorithmButtonColors();
+
+                txtStep.Text = "";
+                txtPage.Text = "";
+
+                dataGridView.ClearSelection();
+                dataGridView.CurrentCell = null;
+
+            }
+        }
+
         // Chọn thuật toán
         private void btnOPT_Click(object sender, EventArgs e)
         {
             selectedAlgorithm = "OPT";
+            ResetAlgorithmButtonColors();
+            btnOPT.BackColor = Color.LightGreen;
             DisableAlgorithmButtons();
+            EnableStartRestartButtons();
         }
 
         private void btnFIFO_Click(object sender, EventArgs e)
         {
             selectedAlgorithm = "FIFO";
+            ResetAlgorithmButtonColors();
+            btnFIFO.BackColor = Color.LightGreen;
             DisableAlgorithmButtons();
+            EnableStartRestartButtons();
         }
 
         private void btnLRU_Click(object sender, EventArgs e)
         {
             selectedAlgorithm = "LRU";
+            ResetAlgorithmButtonColors();
+            btnLRU.BackColor = Color.LightGreen;
             DisableAlgorithmButtons();
+            EnableStartRestartButtons();
         }
 
         private void btnClock_Click(object sender, EventArgs e)
         {
             selectedAlgorithm = "Clock";
+            ResetAlgorithmButtonColors();
+            btnClock.BackColor = Color.LightGreen;
             DisableAlgorithmButtons();
+            EnableStartRestartButtons();
         }
+
+
 
         private void DisableAlgorithmButtons()
         {
@@ -101,6 +163,34 @@ namespace Algorithm_Simulator
             btnClock.Enabled = false;
         }
 
+        private void EnableAlgorithmButtons()
+        {
+            btnFIFO.Enabled = true;
+            btnLRU.Enabled = true;
+            btnOPT.Enabled = true;
+            btnClock.Enabled = true;
+        }
+
+        private void DisableStartRestartButtons()
+        {
+            btnStart.Enabled = false;
+            btnRestart.Enabled = false;
+        }
+
+        private void EnableStartRestartButtons()
+        {
+            btnStart.Enabled = true;
+            btnRestart.Enabled = true;
+        }
+
+        private void ResetAlgorithmButtonColors()
+        {
+            btnFIFO.BackColor = SystemColors.Control;
+            btnLRU.BackColor = SystemColors.Control;
+            btnOPT.BackColor = SystemColors.Control;
+            btnClock.BackColor = SystemColors.Control;
+        }
+
         private List<int> ReadInput()
         {
             List<int> inputPages = new List<int>();
@@ -108,20 +198,23 @@ namespace Algorithm_Simulator
             for (int i = 0; i < dataGridView.ColumnCount; i++)
             {
                 var cellValue = dataGridView.Rows[0].Cells[i].Value;
+                if (cellValue == null || string.IsNullOrWhiteSpace(cellValue.ToString()))
+                {
+                    MessageBox.Show("Không được để trống dữ liệu!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
 
-                if (cellValue != null && int.TryParse(cellValue.ToString(), out int page))
+                if (!int.TryParse(cellValue.ToString(), out int page) || page < 0 || page > 100)
                 {
-                    inputPages.Add(page);
+                    MessageBox.Show("Dữ liệu không hợp lệ!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
                 }
-                else
-                {
-                    MessageBox.Show($"Giá trị không hợp lệ tại cột {i + 1}. Hãy nhập số nguyên.");
-                    throw new Exception("Lỗi dữ liệu đầu vào.");
-                }
+                inputPages.Add(page);
             }
-
             return inputPages;
         }
+
+
 
         private void ClearResultRows()
         {
@@ -136,6 +229,15 @@ namespace Algorithm_Simulator
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            var input = ReadInput();
+            if (input == null)
+            {
+                return;
+            }
+
+            dataGridView.ClearSelection();
+            dataGridView.CurrentCell = null;
+
             if (selectedAlgorithm == null)
             {
                 MessageBox.Show("Vui lòng chọn thuật toán.");
@@ -205,7 +307,9 @@ namespace Algorithm_Simulator
             currentStep = 0;
             btnStart.Text = "Start";
             EnableAlgorithmButtons();
+            DisableStartRestartButtons();
             ClearResultRows();
+            ResetAlgorithmButtonColors();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -214,13 +318,8 @@ namespace Algorithm_Simulator
             MainForm.Show();
         }
 
-        private void EnableAlgorithmButtons()
-        {
-            btnFIFO.Enabled = true;
-            btnLRU.Enabled = true;
-            btnOPT.Enabled = true;
-            btnClock.Enabled = true;
-        }
+
+        /*------------------ Thuật toán -------------------*/
 
         Queue<int> fifoQueue = new Queue<int>();
         private void SimulateFIFO_Step()
@@ -269,6 +368,8 @@ namespace Algorithm_Simulator
                     dataGridView.Rows[1 + j].Cells[currentStep].Value = frame[j];
             }
         }
+
+
 
         private void SimulateOPT_Step()
         {
@@ -356,6 +457,8 @@ namespace Algorithm_Simulator
             }
         }
 
+
+
         private Queue<int> lruQueue = new Queue<int>();
         private void SimulateLRU_Step()
         {
@@ -409,6 +512,8 @@ namespace Algorithm_Simulator
                     dataGridView.Rows[1 + j].Cells[currentStep].Value = "";
             }
         }
+
+
 
         private int pointer = 0;
         private bool[] useBit;

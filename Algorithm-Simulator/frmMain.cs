@@ -17,6 +17,14 @@ namespace Algorithm_Simulator
             InitializeComponent();
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            btnA.TabStop = false;
+            btnB.TabStop = false;
+            btnD.TabStop = false;
+            bntC.TabStop = false;
+        }
+
         private void btnD_Click(object sender, EventArgs e)
         {
             this.Hide();

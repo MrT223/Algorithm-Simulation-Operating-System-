@@ -118,24 +118,25 @@
             // 
             // txtResReq
             // 
-            this.txtResReq.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResReq.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtResReq.Location = new System.Drawing.Point(207, 135);
             this.txtResReq.Name = "txtResReq";
-            this.txtResReq.Size = new System.Drawing.Size(181, 26);
+            this.txtResReq.Size = new System.Drawing.Size(181, 27);
             this.txtResReq.TabIndex = 18;
             this.txtResReq.Visible = false;
             // 
             // txtMax
             // 
             this.txtMax.Enabled = false;
-            this.txtMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMax.Location = new System.Drawing.Point(17, 226);
             this.txtMax.Name = "txtMax";
-            this.txtMax.Size = new System.Drawing.Size(154, 26);
+            this.txtMax.Size = new System.Drawing.Size(154, 27);
             this.txtMax.TabIndex = 21;
             // 
             // txtProcReq
             // 
+            this.txtProcReq.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProcReq.Location = new System.Drawing.Point(207, 88);
             this.txtProcReq.Name = "txtProcReq";
             this.txtProcReq.Size = new System.Drawing.Size(181, 24);
@@ -232,10 +233,10 @@
             // txtAlloc
             // 
             this.txtAlloc.Enabled = false;
-            this.txtAlloc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAlloc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAlloc.Location = new System.Drawing.Point(17, 161);
             this.txtAlloc.Name = "txtAlloc";
-            this.txtAlloc.Size = new System.Drawing.Size(154, 26);
+            this.txtAlloc.Size = new System.Drawing.Size(154, 27);
             this.txtAlloc.TabIndex = 19;
             // 
             // lblAvail
@@ -250,6 +251,7 @@
             // 
             // txtNRes
             // 
+            this.txtNRes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNRes.Location = new System.Drawing.Point(200, 90);
             this.txtNRes.Name = "txtNRes";
             this.txtNRes.Size = new System.Drawing.Size(120, 24);
@@ -258,6 +260,7 @@
             // 
             // txtNProc
             // 
+            this.txtNProc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNProc.Location = new System.Drawing.Point(200, 37);
             this.txtNProc.Name = "txtNProc";
             this.txtNProc.Size = new System.Drawing.Size(120, 24);
@@ -296,13 +299,14 @@
             // 
             // btnExit
             // 
+            this.btnExit.BackColor = System.Drawing.Color.Turquoise;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(369, 626);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(134, 49);
             this.btnExit.TabIndex = 31;
             this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lblOutput
