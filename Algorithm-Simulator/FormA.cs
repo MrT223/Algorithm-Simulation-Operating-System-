@@ -36,10 +36,194 @@ namespace Algorithm_Simulator
 
 
         private Form MainForm;
-        public FormBanker(Form callingForm)
+        public FormBanker(Form callingForm) 
         {
             InitializeComponent();
             MainForm = callingForm;
+        }
+
+        private void FormBanker_Load(object sender, EventArgs e)
+        {
+            btnContinue.Enabled = false;
+            btnCheck.Enabled = false;
+            radiobtnSafe.Checked = true;
+        }
+
+        private void txtNProc_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNProc.Text != "" && txtNRes.Text != "")
+            {
+                btnContinue.Enabled = true;
+            }
+            else
+            {
+                btnContinue.Enabled = false;
+            }
+        }
+
+        private void txtNRes_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNProc.Text != "" && txtNRes.Text != "")
+            {
+                btnContinue.Enabled = true;
+            }
+            else
+            {
+                btnContinue.Enabled = false;
+            }
+        }
+
+        private void btnContinue_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtNProc.Text, out int nProc) || nProc <= 0)
+            {
+                MessageBox.Show("Số tiến trình không hợp lệ. Vui lòng nhập số nguyên dương.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!int.TryParse(txtNRes.Text, out int nRes) || nRes <= 0)
+            {
+                MessageBox.Show("Số tài nguyên không hợp lệ. Vui lòng nhập số nguyên dương.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            nprocesses = nProc;
+            nresources = nRes;
+            count_alloc = 0;
+            count_max = 0;
+            lblAlloc.Text = "Allocation matrix (" + (nprocesses - count_max) + ")";
+            lblMax.Text = "Max matrix (" + (nprocesses - count_alloc) + ")";
+            radiobtnSafe.Enabled = true;
+            radiobtnRequest.Enabled = true;
+            txtMax.Enabled = true;
+            btnMax.Enabled = true;
+
+            txtNProc.Enabled = false;
+            txtNRes.Enabled = false;
+            btnContinue.Enabled = false;
+
+            Allocation = new int[nprocesses][];
+            Max = new int[nprocesses][];
+        }
+
+        private void btnMax_Click(object sender, EventArgs e)
+        {
+            string s = txtMax.Text.Trim();
+
+            string[] parts = s.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (parts.Length != nresources)
+            {
+                MessageBox.Show($"Bạn cần nhập đúng {nresources} giá trị cách nhau bởi dấu cách.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                int[] row = Array.ConvertAll(parts, int.Parse);
+
+                if (Array.Exists(row, x => x < 0))
+                {
+                    MessageBox.Show("Không được nhập số âm trong Max.", "Lỗi giá trị", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Max[count_max] = row;
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Vui lòng chỉ nhập các số nguyên hợp lệ.", "Lỗi định dạng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("Một số bạn nhập quá lớn. Vui lòng nhập số nguyên nhỏ hơn.", "Lỗi tràn số", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            richMax.AppendText($"P{count_max} -> {string.Join(" ", Max[count_max])}\n");
+
+            txtMax.Clear();
+            count_max++;
+            lblMax.Text = "Max matrix (" + (nprocesses - count_max) + ")";
+
+            if (count_max == nprocesses)
+            {
+                txtMax.Enabled = false;
+                btnMax.Enabled = false;
+                txtAlloc.Enabled = true;
+                btnAlloc.Enabled = true;
+            }
+            if (count_alloc == nprocesses && count_max == nprocesses)
+            {
+                btnCheck.Enabled = true;
+            }
+        }
+
+        private void btnAlloc_Click(object sender, EventArgs e)
+        {
+            string s = txtAlloc.Text.Trim();
+
+            string[] parts = s.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (parts.Length != nresources)
+            {
+                MessageBox.Show($"Bạn cần nhập đúng {nresources} giá trị cách nhau bởi dấu cách.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                int[] row = Array.ConvertAll(parts, int.Parse);
+
+                if (Array.Exists(row, x => x < 0))
+                {
+                    MessageBox.Show("Không được nhập số âm trong Allocation.", "Lỗi giá trị", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                for (int i = 0; i < nresources; i++)
+                {
+                    if (row[i] > Max[count_alloc][i])
+                    {
+                        MessageBox.Show($"Allocation tại tiến trình P{count_alloc} vượt quá Max cho tài nguyên R{i}.\n" +
+                            $"Giá trị Allocation: {row[i]}, Max: {Max[count_alloc][i]}",
+                            "Lỗi logic Allocation > Max",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return; // Cho nhập lại dòng đó
+                    }
+                }
+
+                Allocation[count_alloc] = row;
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Vui lòng chỉ nhập các số nguyên hợp lệ.", "Lỗi định dạng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("Một số bạn nhập quá lớn. Vui lòng nhập số nguyên nhỏ hơn.", "Lỗi tràn số", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            richAlloc.AppendText($"P{count_alloc} -> {string.Join(" ", Allocation[count_alloc])}\n");
+
+            txtAlloc.Clear();
+            count_alloc++;
+            lblAlloc.Text = "Allocation matrix (" + (nprocesses - count_alloc) + ")";
+
+            if (count_alloc == nprocesses)
+            {
+                txtAlloc.Enabled = false;
+                btnAlloc.Enabled = false;
+                txtAvail.Enabled = true;
+            }
+
+            if (count_alloc == nprocesses && count_max == nprocesses)
+            {
+                btnCheck.Enabled = true;
+            }
         }
 
 
@@ -65,7 +249,6 @@ namespace Algorithm_Simulator
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
-            // Kiểm tra input Available
             string[] availParts = txtAvail.Text.Trim().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             if (availParts.Length != nresources)
             {
@@ -93,7 +276,6 @@ namespace Algorithm_Simulator
                 return;
             }
 
-            // Khởi tạo process
             state = new bool[nprocesses];
             processes = new List<process>();
             for (int i = 0; i < nprocesses; i++)
@@ -113,7 +295,6 @@ namespace Algorithm_Simulator
                 state[i] = false;
             }
 
-            // Hiển thị Need matrix
             richNeed.Clear();
             string n = "  \t";
             for (int a = 0; a < nresources; a++)
@@ -133,7 +314,6 @@ namespace Algorithm_Simulator
             string s = "";
             if (choice == 1)
             {
-                // Safe Mode
                 List<string> explanation;
                 if (IsSafe(processes, available, out explanation))
                 {
@@ -158,7 +338,6 @@ namespace Algorithm_Simulator
             }
             else
             {
-                // Request Mode
                 int pp;
                 try
                 {
@@ -233,6 +412,23 @@ namespace Algorithm_Simulator
             }
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            processes.Clear();
+            seq.Clear();
+            req.Clear();
+            this.Controls.Clear();
+            this.InitializeComponent();
+            btnCheck.Enabled = false;
+            btnContinue.Enabled = false;
+            radiobtnSafe.Checked = true;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MainForm.Show();
+        }
 
         private bool IsSafe(List<process> processes, int[] available, out List<string> explanation)
         {
@@ -286,209 +482,6 @@ namespace Algorithm_Simulator
 
             explanation.Add("All processes can finish. System is in a SAFE state.");
             return true;
-        }
-
-
-        private void btnMax_Click(object sender, EventArgs e)
-        {
-            string s = txtMax.Text.Trim();
-
-            // Tách chuỗi bằng khoảng trắng, bỏ các chuỗi rỗng
-            string[] parts = s.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
-            if (parts.Length != nresources)
-            {
-                MessageBox.Show($"Bạn cần nhập đúng {nresources} giá trị cách nhau bởi dấu cách.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            try
-            {
-                int[] row = Array.ConvertAll(parts, int.Parse);
-
-                // Kiểm tra có số âm không
-                if (Array.Exists(row, x => x < 0))
-                {
-                    MessageBox.Show("Không được nhập số âm trong Max.", "Lỗi giá trị", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                Max[count_max] = row;
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Vui lòng chỉ nhập các số nguyên hợp lệ.", "Lỗi định dạng", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            catch (OverflowException)
-            {
-                MessageBox.Show("Một số bạn nhập quá lớn. Vui lòng nhập số nguyên nhỏ hơn.", "Lỗi tràn số", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // In ra richMax
-            richMax.AppendText($"P{count_max} -> {string.Join(" ", Max[count_max])}\n");
-
-            txtMax.Clear();
-            count_max++;
-            lblMax.Text = "Max matrix (" + (nprocesses - count_max) + ")";
-
-            if (count_max == nprocesses)
-            {
-                txtMax.Enabled = false;
-                btnMax.Enabled = false;
-            }
-            if (count_alloc == nprocesses && count_max == nprocesses)
-            {
-                btnCheck.Enabled = true;
-            }
-        }
-
-
-        private void btnContinue_Click(object sender, EventArgs e)
-        {
-            // Kiểm tra hợp lệ cho txtNProc
-            if (!int.TryParse(txtNProc.Text, out int nProc) || nProc <= 0)
-            {
-                MessageBox.Show("Số tiến trình không hợp lệ. Vui lòng nhập số nguyên dương.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Kiểm tra hợp lệ cho txtNRes
-            if (!int.TryParse(txtNRes.Text, out int nRes) || nRes <= 0)
-            {
-                MessageBox.Show("Số tài nguyên không hợp lệ. Vui lòng nhập số nguyên dương.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            nprocesses = nProc;
-            nresources = nRes;
-            count_alloc = 0;
-            count_max = 0;
-            lblAlloc.Text = "Allocation matrix (" + (nprocesses - count_max) + ")";
-            lblMax.Text = "Max matrix (" + (nprocesses - count_alloc) + ")";
-            txtAlloc.Enabled = true;
-            btnAlloc.Enabled = true;
-            txtAvail.Enabled = true;
-            radiobtnSafe.Enabled = true;
-            radiobtnRequest.Enabled = true;
-            txtMax.Enabled = true;
-            btnMax.Enabled = true;
-
-            txtNProc.Enabled = false;
-            txtNRes.Enabled = false;
-            btnContinue.Enabled = false;
-
-            Allocation = new int[nprocesses][];
-            Max = new int[nprocesses][];
-        }
-
-
-
-        private void btnAlloc_Click(object sender, EventArgs e)
-        {
-            string s = txtAlloc.Text.Trim();
-
-            // Tách chuỗi bằng khoảng trắng, bỏ các chuỗi rỗng
-            string[] parts = s.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
-            if (parts.Length != nresources)
-            {
-                MessageBox.Show($"Bạn cần nhập đúng {nresources} giá trị cách nhau bởi dấu cách.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            try
-            {
-                int[] row = Array.ConvertAll(parts, int.Parse);
-
-                // Kiểm tra có số âm không
-                if (Array.Exists(row, x => x < 0))
-                {
-                    MessageBox.Show("Không được nhập số âm trong Allocation.", "Lỗi giá trị", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                Allocation[count_alloc] = row;
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Vui lòng chỉ nhập các số nguyên hợp lệ.", "Lỗi định dạng", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            catch (OverflowException)
-            {
-                MessageBox.Show("Một số bạn nhập quá lớn. Vui lòng nhập số nguyên nhỏ hơn.", "Lỗi tràn số", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // In ra richAlloc
-            richAlloc.AppendText($"P{count_alloc} -> {string.Join(" ", Allocation[count_alloc])}\n");
-
-            txtAlloc.Clear();
-            count_alloc++;
-            lblAlloc.Text = "Allocation matrix (" + (nprocesses - count_alloc) + ")";
-
-            if (count_alloc == nprocesses)
-            {
-                txtAlloc.Enabled = false;
-                btnAlloc.Enabled = false;
-            }
-            if (count_alloc == nprocesses && count_max == nprocesses)
-            {
-                btnCheck.Enabled = true;
-            }
-        }
-
-
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            processes.Clear();
-            seq.Clear();
-            req.Clear();
-            this.Controls.Clear();
-            this.InitializeComponent();
-            btnCheck.Enabled = false;
-            btnContinue.Enabled = false;
-            radiobtnSafe.Checked = true;
-        }
-
-        private void FormBanker_Load(object sender, EventArgs e)
-        {
-            btnContinue.Enabled = false;
-            btnCheck.Enabled = false;
-            radiobtnSafe.Checked = true;
-        }
-
-        private void txtNProc_TextChanged(object sender, EventArgs e)
-        {
-            if (txtNProc.Text != "" && txtNRes.Text != "")
-            {
-                btnContinue.Enabled = true;
-            }
-            else
-            {
-                btnContinue.Enabled = false;
-            }
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            MainForm.Show();
-        }
-
-        private void txtNRes_TextChanged(object sender, EventArgs e)
-        {
-            if (txtNProc.Text != "" && txtNRes.Text != "")
-            {
-                btnContinue.Enabled = true;
-            }
-            else
-            {
-                btnContinue.Enabled = false;
-            }
         }
 
         private bool Request(List<process> processes, int[] available, int p, List<int> req, out List<string> explanation)
