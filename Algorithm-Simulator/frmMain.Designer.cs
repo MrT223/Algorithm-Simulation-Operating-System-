@@ -202,11 +202,11 @@
             // 
             this.lblE.AutoSize = true;
             this.lblE.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblE.Location = new System.Drawing.Point(175, 461);
+            this.lblE.Location = new System.Drawing.Point(175, 459);
             this.lblE.Name = "lblE";
-            this.lblE.Size = new System.Drawing.Size(300, 36);
+            this.lblE.Size = new System.Drawing.Size(263, 36);
             this.lblE.TabIndex = 6;
-            this.lblE.Text = "Nguyễn Quang Khắm";
+            this.lblE.Text = "Ngô Quang Khánh";
             // 
             // lblmemD
             // 
