@@ -88,10 +88,13 @@
             // 
             // dgvResult
             // 
+            this.dgvResult.AllowUserToAddRows = false;
+            this.dgvResult.AllowUserToDeleteRows = false;
             this.dgvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvResult.Location = new System.Drawing.Point(0, 0);
             this.dgvResult.Name = "dgvResult";
+            this.dgvResult.ReadOnly = true;
             this.dgvResult.RowHeadersWidth = 51;
             this.dgvResult.RowTemplate.Height = 24;
             this.dgvResult.Size = new System.Drawing.Size(449, 200);
@@ -108,10 +111,13 @@
             // 
             // dgvAVG
             // 
+            this.dgvAVG.AllowUserToAddRows = false;
+            this.dgvAVG.AllowUserToDeleteRows = false;
             this.dgvAVG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAVG.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAVG.Location = new System.Drawing.Point(0, 0);
             this.dgvAVG.Name = "dgvAVG";
+            this.dgvAVG.ReadOnly = true;
             this.dgvAVG.RowHeadersWidth = 51;
             this.dgvAVG.RowTemplate.Height = 24;
             this.dgvAVG.Size = new System.Drawing.Size(449, 214);

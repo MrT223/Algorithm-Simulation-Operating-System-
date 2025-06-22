@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Algorithm_Simulator
 {
@@ -21,7 +22,7 @@ namespace Algorithm_Simulator
 
         private string status = "none"; // trạng thái thuật toán
         private int n = 0; // số lượng process 
-        private int ganttX = 0; // biến thành viên để ghi nhớ vị trí x hiện tại
+        private int ganttX = 0; // biến để ghi nhớ vị trí x hiện tại để vẽ biểu gantt
 
         public class Process
         {
@@ -37,7 +38,6 @@ namespace Algorithm_Simulator
         }
 
         private List<Process> ganttSegments = new List<Process>();
-        Process currentSegment = null;
 
         private void CreateLb(string text)
         {
@@ -121,13 +121,7 @@ namespace Algorithm_Simulator
 
         private void SetupProcess()
         {
-            string newProcess = txtProcess.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(newProcess))
-            {
-                MessageBox.Show("Vui lòng nhập tên Process.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            string newProcess = txtProcess.Text;
             // Thêm vào DataGridView
             int index = dgvProcess.Rows.Add();
             dgvProcess.Rows[index].Cells["ProcessName"].Value = newProcess;
@@ -143,8 +137,6 @@ namespace Algorithm_Simulator
             // Tạo cột nếu chưa có
             if (dgvResult.Columns.Count == 0)
             {
-                dgvResult.AllowUserToAddRows = false;
-
                 dgvResult.Columns.Add("PrName", "Process");
                 dgvResult.Columns.Add("TAT", "Turn Around Time");
                 dgvResult.Columns.Add("WT", "Waiting Time");
@@ -152,10 +144,6 @@ namespace Algorithm_Simulator
                 dgvResult.Columns["PrName"].Width = 50;
                 dgvResult.Columns["TAT"].Width = 90;
                 dgvResult.Columns["WT"].Width = 90;
-
-                dgvResult.Columns["PrName"].ReadOnly = true;
-                dgvResult.Columns["TAT"].ReadOnly = true;
-                dgvResult.Columns["WT"].ReadOnly = true;
 
                 dgvResult.Columns["PrName"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvResult.Columns["TAT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -165,14 +153,11 @@ namespace Algorithm_Simulator
             if (dgvProcess.Rows.Count > 0)
             {
                 DataGridViewRow lastRow = dgvProcess.Rows[dgvProcess.Rows.Count - 1];
-                if (!lastRow.IsNewRow)
-                {
-                    string processName = lastRow.Cells["ProcessName"].Value?.ToString() ?? "";
-                    int index = dgvResult.Rows.Add();
-                    dgvResult.Rows[index].Cells["PrName"].Value = processName;
-                    dgvResult.Rows[index].Cells["TAT"].Value = "";
-                    dgvResult.Rows[index].Cells["WT"].Value = "";
-                }
+                string processName = lastRow.Cells["ProcessName"].Value?.ToString() ?? "";
+                int index = dgvResult.Rows.Add();
+                dgvResult.Rows[index].Cells["PrName"].Value = processName;
+                dgvResult.Rows[index].Cells["TAT"].Value = "";
+                dgvResult.Rows[index].Cells["WT"].Value = "";
             }
         }
 
@@ -188,8 +173,8 @@ namespace Algorithm_Simulator
         {
             if (dgvProcess.Rows.Count > 0)
             {
-                // Xóa dòng cuối (trừ khi đó là dòng mới đang nhập nếu AllowUserToAddRows = true)
-                int lastRowIndex = dgvProcess.AllowUserToAddRows ? dgvProcess.Rows.Count - 2 : dgvProcess.Rows.Count - 1;
+                // Xóa dòng cuối
+                int lastRowIndex = dgvProcess.Rows.Count - 1;
 
                 if (lastRowIndex >= 0)
                 {
@@ -219,19 +204,20 @@ namespace Algorithm_Simulator
 
             foreach (DataGridViewRow row in dgvProcess.Rows)
             {
-                if (row.IsNewRow) continue;
+                string name = row.Cells["ProcessName"].Value?.ToString() ?? "";
+                int arrival = (int)row.Cells["Arrival"].Value;
+                int burst = (int)row.Cells["Burst"].Value;
+                int priority = (int)row.Cells["Priority"].Value;
 
                 var process = new Process
                 {
-                    Name = row.Cells["ProcessName"].Value?.ToString() ?? "",
-                    Arrival = Convert.ToInt32(row.Cells["Arrival"].Value),
-                    Burst = Convert.ToInt32(row.Cells["Burst"].Value),
-                    Priority = Convert.ToInt32(row.Cells["Priority"].Value)
+                    Name = name,
+                    Arrival = arrival,
+                    Burst = burst,
+                    Priority = priority
                 };
-
                 processes.Add(process);
             }
-
             return processes;
         }
 
@@ -321,7 +307,6 @@ namespace Algorithm_Simulator
                 return;
             }
 
-            string Algo = status;
             // Đọc dữ liệu từ DataGridView
             List<Process> processes = GetProcesses();
             if (processes == null || processes.Count == 0)
@@ -348,11 +333,6 @@ namespace Algorithm_Simulator
             PanelInfor.Controls.Clear();       // Clear PanelInfor 
             ClearGanttChart();                 // Clear Gantt chart
             ganttSegments.Clear();             // Clear danh sách đoạn Gantt
-            dgvResult.Rows.Clear();            // Clear kết quả tiến trình
-            dgvAVG.Rows.Clear();               // Clear AVG TAT/WT
-
-            // 4. Tạo bảng kết quả
-            InitializeResultTable(proc);       // Ghi tên tiến trình trước, TAT/WT cập nhật sau
 
             // Lấy trạng thái
             string Algo = status;
@@ -360,31 +340,31 @@ namespace Algorithm_Simulator
             switch (Algo)
             {
                 case "FCFS":
-                    // 5. Gọi thuật toán FCFS
+                    // 4. Gọi thuật toán FCFS
                     var res = await FCFS(proc);
                     //Hiển thị AVG sau khi toàn bộ tiến trình hoàn tất
                     DisplayAVG(res);
                     break;
                 case "SJF":
-                    // 5. Gọi thuật toán SJF
+                    // 4. Gọi thuật toán SJF
                     var res1 = await SJF(proc);
                     //Hiển thị AVG sau khi toàn bộ tiến trình hoàn tất
                     DisplayAVG(res1);
                     break;
                 case "SRTF":
-                    // 5. Gọi thuật toán SRTF
+                    // 4. Gọi thuật toán SRTF
                     var res2 = await SRTF(proc);
                     //Hiển thị AVG sau khi toàn bộ tiến trình hoàn tất
                     DisplayAVG(res2);
                     break;
                 case "PS":
-                    // 5. Gọi thuật toán PS
+                    // 4. Gọi thuật toán PS
                     var res3 = await PS(proc);
                     //Hiển thị AVG sau khi toàn bộ tiến trình hoàn tất
                     DisplayAVG(res3);
                     break;
                 case "RR":
-                    // 5. Gọi thuật toán RR, khóa trabar
+                    // 4. Gọi thuật toán RR, khóa trabar
                     trBarQuantum.Enabled = false;
                     var result = await RR(proc, quantum);
                     //Hiển thị AVG sau khi toàn bộ tiến trình hoàn tất
@@ -487,7 +467,8 @@ namespace Algorithm_Simulator
 
             while (result.Count < processes.Count)
             {
-                // Thêm tiến trình đã đến vào hàng đợi
+                //iLọc các tiến trình đã đến (arrival time ≤ currentTime) và đưa vào readyQueue. Đồng thời xóa khỏi notArrived.
+
                 var newlyArrived = notArrived.Where(p => p.Arrival <= currentTime).ToList();
                 foreach (var p in newlyArrived)
                 {
@@ -499,7 +480,7 @@ namespace Algorithm_Simulator
                 if (readyQueue.Count == 0)
                 {
                     var idleStart = currentTime;
-                    currentTime = notArrived.First().Arrival;
+                    currentTime = notArrived.First().Arrival;   // currentTime được cập nhật đến thời điểm tiến trình kế tiếp đến
 
                     AddStatus($"{idleStart}s: CPU Trống", Color.Gray);
 
@@ -516,7 +497,6 @@ namespace Algorithm_Simulator
 
                     continue;
                 }
-
 
                 var next = readyQueue
                     .OrderBy(p => p.Burst)
@@ -573,6 +553,7 @@ namespace Algorithm_Simulator
             var readyQueue = new List<Process>();
             var notArrived = all.OrderBy(p => p.Arrival).ToList();
 
+            //Biến theo dõi tiến trình
             Process current = null;
             int timeSliceStart = -1;
 
@@ -587,7 +568,7 @@ namespace Algorithm_Simulator
                 }
                 notArrived.RemoveAll(p => p.Arrival <= currentTime);
 
-                // Nếu không có tiến trình nào thì CPU rảnh
+                // Nếu không có tiến trình nào thì CPU trống
                 if (current == null && readyQueue.Count == 0)
                 {
                     int idleStart = currentTime;
@@ -595,7 +576,6 @@ namespace Algorithm_Simulator
                     // Tìm thời điểm sớm nhất tiến trình mới đến
                     int nextArrival = notArrived.Any() ? notArrived.First().Arrival : currentTime + 1;
 
-                    // CPU sẽ idle từ currentTime đến nextArrival
                     currentTime = nextArrival;
 
                     AddStatus($"{idleStart}s - {currentTime}s: CPU Trống", Color.Gray);
@@ -644,7 +624,6 @@ namespace Algorithm_Simulator
                         AddStatus($"{currentTime}s: Process {current.Name} bắt đầu chạy", Color.Green);
                     }
 
-                    // Thực thi 1 đơn vị thời gian
                     await Task.Delay(GetDelay());
                     current.Remaining--;
                     currentTime++;
@@ -707,6 +686,7 @@ namespace Algorithm_Simulator
 
             while (completed < all.Count)
             {
+                //Lấy tiến trình có độ ưu tiên cao nhất
                 var ready = all
                     .Where(p => p.Arrival <= currentTime && p.Remaining > 0)
                     .OrderBy(p => p.Priority)
@@ -829,9 +809,10 @@ namespace Algorithm_Simulator
                 StartTime = -1
             }).ToList();
 
-            var remainingTime = all.ToDictionary(p => p.Name, p => p.Burst);
-            var readyQueue = new Queue<Process>();
+            var remainingTime = all.ToDictionary(p => p.Name, p => p.Burst); // Lưu thời gian còn lại
+            var readyQueue = new Queue<Process>();  // hàng đợi
 
+            // Đưa tất cả tiến trình đã đến vào hàng đợi
             int i = 0;
             while (i < n && all[i].Arrival <= time)
                 readyQueue.Enqueue(all[i++]);
@@ -854,7 +835,6 @@ namespace Algorithm_Simulator
                     while (i < n && all[i].Arrival <= time)
                         readyQueue.Enqueue(all[i++]);
 
-                    // Nếu có process mới sau khi idle, ghi block trống
                     if (readyQueue.Count > 0 && idleStart.HasValue)
                     {
                         AddStatus($"{idleStart.Value}s - {time}s: CPU Trống", Color.Gray);
@@ -986,10 +966,6 @@ namespace Algorithm_Simulator
                 dgvAVG.Columns["WT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvAVG.Columns["TAT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 dgvAVG.Columns["WT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-                dgvAVG.AllowUserToAddRows = false;
-                dgvAVG.RowHeadersVisible = false;
-                dgvAVG.ReadOnly = true;
             }
 
             // Xóa dữ liệu cũ
@@ -998,7 +974,6 @@ namespace Algorithm_Simulator
             // Thêm dòng mới
             dgvAVG.Rows.Add(avgTAT.ToString("F2"), avgWT.ToString("F2"));
         }
-
 
         private void AddGanttBlock(Process p)
         {
@@ -1021,7 +996,6 @@ namespace Algorithm_Simulator
             // Màu sắc tiến trình
             box.BackColor = (p.Name == "-") ? Color.LightGray : Color.LightBlue;
 
-
             box.BorderStyle = BorderStyle.FixedSingle;
             box.Location = new Point(ganttX, 10);
             box.Size = new Size(width, height);
@@ -1035,31 +1009,6 @@ namespace Algorithm_Simulator
             endTime.Location = new Point(ganttX, height + 15);
             endTime.AutoSize = true;
             PanelGantt.Controls.Add(endTime);
-        }
-
-        private void InitializeResultTable(List<Process> processes)
-        {
-            dgvResult.Rows.Clear();
-            if (dgvResult.Columns.Count == 0)
-            {
-                dgvResult.Columns.Add("PrName", "Process");
-                dgvResult.Columns.Add("TAT", "Turnaround Time");
-                dgvResult.Columns.Add("WT", "Waiting Time");
-
-                dgvResult.Columns["PrName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvResult.Columns["TAT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvResult.Columns["WT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-                dgvResult.AllowUserToAddRows = false;
-                dgvResult.RowHeadersVisible = false;
-                dgvResult.ReadOnly = true;
-            }
-
-            foreach (var p in processes)
-            {
-                int index = dgvResult.Rows.Add();
-                dgvResult.Rows[index].Cells["PrName"].Value = p.Name;
-            }
         }
     }
 }
