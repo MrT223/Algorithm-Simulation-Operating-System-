@@ -66,9 +66,9 @@
               "Title": "FormB.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormB.cs",
               "RelativeDocumentMoniker": "Algorithm-Simulator\\FormB.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormB.cs*",
-              "RelativeToolTip": "Algorithm-Simulator\\FormB.cs*",
-              "ViewState": "AgIAADwBAAAAAAAAAAAAAE8BAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormB.cs",
+              "RelativeToolTip": "Algorithm-Simulator\\FormB.cs",
+              "ViewState": "AgIAAIIBAAAAAAAAAAAMwJQBAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-19T11:27:43.365Z",
               "EditorCaption": ""
@@ -79,8 +79,8 @@
               "Title": "FormB.cs [Design]",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormB.cs",
               "RelativeDocumentMoniker": "Algorithm-Simulator\\FormB.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormB.cs [Design]*",
-              "RelativeToolTip": "Algorithm-Simulator\\FormB.cs [Design]*",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormB.cs [Design]",
+              "RelativeToolTip": "Algorithm-Simulator\\FormB.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-19T11:27:40.229Z",
               "EditorCaption": " [Design]"
@@ -94,8 +94,7 @@
               "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\frmMain.cs [Design]",
               "RelativeToolTip": "Algorithm-Simulator\\frmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T08:01:37.781Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-19T08:01:37.781Z"
             },
             {
               "$type": "Document",
@@ -106,8 +105,7 @@
               "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\formD.cs [Design]",
               "RelativeToolTip": "Algorithm-Simulator\\formD.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T08:01:27.13Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-19T08:01:27.13Z"
             },
             {
               "$type": "Document",
@@ -119,8 +117,7 @@
               "RelativeToolTip": "Algorithm-Simulator\\FormA.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAALcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T08:07:12.09Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-17T08:07:12.09Z"
             },
             {
               "$type": "Document",
@@ -131,8 +128,7 @@
               "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\Algorithm-Simulation-Operating-System-\\Algorithm-Simulator\\FormA.cs [Design]",
               "RelativeToolTip": "Algorithm-Simulator\\FormA.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T07:28:00.582Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-17T07:28:00.582Z"
             }
           ]
         }

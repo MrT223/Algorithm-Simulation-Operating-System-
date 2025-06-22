@@ -227,6 +227,24 @@ namespace Algorithm_Simulator
             MainForm.Show();
         }
 
+        private void btnTurnoff()
+        {
+            btnFCFS.Enabled = false;
+            btnSJF.Enabled = false;
+            btnSRTF.Enabled = false;
+            btnRR.Enabled = false;
+            btnPS.Enabled = false;
+        }
+
+        private void btnTurnon()
+        {
+            btnFCFS.Enabled = true;
+            btnSJF.Enabled = true;
+            btnSRTF.Enabled = true;
+            btnRR.Enabled = true;
+            btnPS.Enabled = true;
+        }
+
         private void btnFCFS_Click(object sender, EventArgs e)
         {
             HideQuantumControls();
@@ -300,6 +318,11 @@ namespace Algorithm_Simulator
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            // Khóa trạng thái
+            btnAdd.Enabled = false;
+            btnDelete.Enabled = false;
+            btnTurnoff();
+
             // Kiểm tra thuật toán
             if (status == "none")
             {
@@ -375,6 +398,11 @@ namespace Algorithm_Simulator
             // Bật lại trạng thái
             btnStart.Enabled = true;
             btnReset.Enabled = true;
+
+            btnAdd.Enabled = true;
+            btnDelete.Enabled = true;
+
+            btnTurnon();
         }
 
         // Thuật toán FCFS
