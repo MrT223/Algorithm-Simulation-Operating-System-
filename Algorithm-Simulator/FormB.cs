@@ -599,7 +599,7 @@ namespace Algorithm_Simulator
                 if (current == null && readyQueue.Count == 0)
                 {
                     int idleStart = currentTime;
-                    int nextArrival = notArrived.Any() ? notArrived.First().Arrival : currentTime + 1;
+                    int nextArrival = notArrived.First().Arrival; //Lấy thời gian Arrival của tiến trình gần nhất
 
                     currentTime = nextArrival;
 
