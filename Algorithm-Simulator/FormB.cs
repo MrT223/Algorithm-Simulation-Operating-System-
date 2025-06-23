@@ -572,7 +572,8 @@ namespace Algorithm_Simulator
                     Arrival = p.Arrival,
                     Burst = p.Burst,
                     Priority = p.Priority,
-                    Remaining = p.Burst
+                    Remaining = p.Burst,
+                    StartTime = -1
                 })
                 .ToList();
 
@@ -581,9 +582,7 @@ namespace Algorithm_Simulator
             var readyQueue = new List<Process>();
             var notArrived = all.OrderBy(p => p.Arrival).ToList();
 
-            //Biến theo dõi tiến trình
             Process current = null;
-            int timeSliceStart = -1;
 
             while (result.Count < processes.Count)
             {
@@ -596,32 +595,27 @@ namespace Algorithm_Simulator
                 }
                 notArrived.RemoveAll(p => p.Arrival <= currentTime);
 
-                // Nếu không có tiến trình nào thì CPU trống
+                // CPU trống
                 if (current == null && readyQueue.Count == 0)
                 {
                     int idleStart = currentTime;
-
-                    // Tìm thời điểm sớm nhất tiến trình mới đến
                     int nextArrival = notArrived.Any() ? notArrived.First().Arrival : currentTime + 1;
 
                     currentTime = nextArrival;
 
                     AddStatus($"{idleStart}s - {currentTime}s: CPU Trống", Color.Gray);
-
-                    var idleSegment = new Process
+                    ganttSegments.Add(new Process
                     {
                         Name = "-",
                         StartTime = idleStart,
                         CompletionTime = currentTime,
                         Burst = currentTime - idleStart
-                    };
-                    ganttSegments.Add(idleSegment);
-                    AddGanttBlock(idleSegment);
-
+                    });
+                    AddGanttBlock(ganttSegments.Last());
                     continue;
                 }
 
-                // Chọn tiến trình có remaining time nhỏ nhất
+                // Chọn tiến trình có thời gian còn lại nhỏ nhất
                 if (readyQueue.Count > 0)
                 {
                     var shortest = readyQueue
@@ -632,23 +626,25 @@ namespace Algorithm_Simulator
 
                     if (current != shortest)
                     {
-                        // Nếu đang chạy cái khác thì lưu đoạn Gantt trước
-                        if (current != null && timeSliceStart < currentTime)
+                        // Nếu đang chạy tiến trình khác, chốt đoạn cũ
+                        if (current != null && current.StartTime < currentTime)
                         {
-                            var segment = new Process
+                            ganttSegments.Add(new Process
                             {
                                 Name = current.Name,
-                                StartTime = timeSliceStart,
+                                StartTime = current.StartTime,
                                 CompletionTime = currentTime,
-                                Burst = currentTime - timeSliceStart
-                            };
-                            ganttSegments.Add(segment);
-                            AddGanttBlock(segment);
+                                Burst = currentTime - current.StartTime
+                            });
+                            AddGanttBlock(ganttSegments.Last());
                         }
 
-                        // Bắt đầu tiến trình mới
+                        // Chuyển sang tiến trình mới
                         current = shortest;
-                        timeSliceStart = currentTime;
+
+                        if (current.StartTime == -1 || current.StartTime < currentTime)
+                            current.StartTime = currentTime;
+
                         AddStatus($"{currentTime}s: Process {current.Name} bắt đầu chạy", Color.Green);
                     }
 
@@ -656,23 +652,21 @@ namespace Algorithm_Simulator
                     current.Remaining--;
                     currentTime++;
 
-                    // Nếu tiến trình hoàn thành
                     if (current.Remaining == 0)
                     {
                         current.CompletionTime = currentTime;
                         current.TurnAroundTime = current.CompletionTime - current.Arrival;
                         current.WaitingTime = current.TurnAroundTime - current.Burst;
 
-                        // Kết thúc đoạn cuối Gantt
-                        var finalSegment = new Process
+                        // Chốt đoạn cuối
+                        ganttSegments.Add(new Process
                         {
                             Name = current.Name,
-                            StartTime = timeSliceStart,
+                            StartTime = current.StartTime,
                             CompletionTime = currentTime,
-                            Burst = currentTime - timeSliceStart
-                        };
-                        ganttSegments.Add(finalSegment);
-                        AddGanttBlock(finalSegment);
+                            Burst = currentTime - current.StartTime
+                        });
+                        AddGanttBlock(ganttSegments.Last());
 
                         DisplayProcessResult(current);
                         AddStatus($"{currentTime}s: Process {current.Name} đã kết thúc", Color.Red);
@@ -739,10 +733,12 @@ namespace Algorithm_Simulator
                         AddGanttBlock(ganttSegments.Last());
                         idleStart = null;
                     }
-
+                    
+                    //Nếu lần đầu chạy
                     if (current.StartTime == -1)
                         current.StartTime = currentTime;
 
+                    //Nếu có tiến trình thay đổi, nhường cpu
                     if (lastRunning != current.Name)
                     {
                         if (currentSegment != null && lastRunning != "-")
@@ -824,7 +820,7 @@ namespace Algorithm_Simulator
         private async Task<List<Process>> RR(List<Process> processes, int quantum)
         {
             processes = processes.OrderBy(p => p.Arrival).ToList();
-            int n = processes.Count;
+            n = processes.Count;
             int time = 0, completed = 0;
 
             var result = new List<Process>();
@@ -851,9 +847,9 @@ namespace Algorithm_Simulator
 
             while (completed < n)
             {
+                // Nếu CPU bắt đầu trống
                 if (readyQueue.Count == 0)
                 {
-                    // Nếu CPU bắt đầu trống
                     if (!idleStart.HasValue)
                         idleStart = time;
 
@@ -865,6 +861,7 @@ namespace Algorithm_Simulator
 
                     if (readyQueue.Count > 0 && idleStart.HasValue)
                     {
+                        //Kết thúc thời gian trống
                         AddStatus($"{idleStart.Value}s - {time}s: CPU Trống", Color.Gray);
                         var idleSegment = new Process
                         {
@@ -919,7 +916,7 @@ namespace Algorithm_Simulator
                     while (i < n && all[i].Arrival <= time)
                         readyQueue.Enqueue(all[i++]);
                 }
-                if (remainingTime[current.Name] > 0)
+                if (remainingTime[current.Name] > 0) // vẫn còn thời gian thực thi
                 {
                     readyQueue.Enqueue(current);
 
@@ -944,7 +941,7 @@ namespace Algorithm_Simulator
                 lastRunning = current.Name;
             }
 
-            // Ghi block cuối nếu còn
+            // Ghi gantt cuối nếu còn
             if (currentSegment != null)
             {
                 currentSegment.CompletionTime = time;
