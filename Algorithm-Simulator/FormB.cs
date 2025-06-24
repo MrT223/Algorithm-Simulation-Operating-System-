@@ -471,7 +471,7 @@ namespace Algorithm_Simulator
                 result.Add(p);
             }
 
-            return result.OrderBy(p => p.Name).ToList();
+            return result.ToList();
         }
 
         // Thuật toán SJF
@@ -500,7 +500,6 @@ namespace Algorithm_Simulator
                 var newlyArrived = notArrived.Where(p => p.Arrival <= currentTime).ToList();
                 foreach (var p in newlyArrived)
                 {
-                    AddStatus($"{currentTime}s: Process {p.Name} được thêm vào hàng đợi", Color.Blue);
                     readyQueue.Add(p);
                 }
                 notArrived.RemoveAll(p => p.Arrival <= currentTime);
@@ -529,7 +528,7 @@ namespace Algorithm_Simulator
                 var next = readyQueue
                     .OrderBy(p => p.Burst)
                     .ThenBy(p => p.Arrival)
-                    .ThenBy(p => p.Name)
+                    
                     .First();
 
                 readyQueue.Remove(next);
@@ -559,7 +558,7 @@ namespace Algorithm_Simulator
                 result.Add(next);
             }
 
-            return result.OrderBy(p => p.Name).ToList();
+            return result.ToList();
         }
 
         // Thuật toán SRTF
@@ -621,7 +620,7 @@ namespace Algorithm_Simulator
                     var shortest = readyQueue
                         .OrderBy(p => p.Remaining)
                         .ThenBy(p => p.Arrival)
-                        .ThenBy(p => p.Name)
+                        
                         .First();
 
                     if (current != shortest)
@@ -682,7 +681,7 @@ namespace Algorithm_Simulator
                 }
             }
 
-            return result.OrderBy(p => p.Name).ToList();
+            return result.ToList();
         }
 
         // Thuật toán Priority Scheduling
@@ -813,7 +812,7 @@ namespace Algorithm_Simulator
                 }
             }
 
-            return result.OrderBy(p => p.Name).ToList();
+            return result.ToList();
         }
 
         // Thuật toán Round Robin
@@ -951,7 +950,7 @@ namespace Algorithm_Simulator
             }
 
             trBarQuantum.Enabled = true;
-            return result.OrderBy(p => p.Name).ToList();
+            return result.ToList();
         }
 
         private void DisplayProcessResult(Process p)
