@@ -471,7 +471,7 @@ namespace Algorithm_Simulator
                 result.Add(p);
             }
 
-            return result.ToList();
+            return result;
         }
 
         // Thuật toán SJF
@@ -528,7 +528,6 @@ namespace Algorithm_Simulator
                 var next = readyQueue
                     .OrderBy(p => p.Burst)
                     .ThenBy(p => p.Arrival)
-                    
                     .First();
 
                 readyQueue.Remove(next);
@@ -558,7 +557,7 @@ namespace Algorithm_Simulator
                 result.Add(next);
             }
 
-            return result.ToList();
+            return result;
         }
 
         // Thuật toán SRTF
@@ -620,7 +619,6 @@ namespace Algorithm_Simulator
                     var shortest = readyQueue
                         .OrderBy(p => p.Remaining)
                         .ThenBy(p => p.Arrival)
-                        
                         .First();
 
                     if (current != shortest)
@@ -681,7 +679,7 @@ namespace Algorithm_Simulator
                 }
             }
 
-            return result.ToList();
+            return result;
         }
 
         // Thuật toán Priority Scheduling
@@ -812,7 +810,7 @@ namespace Algorithm_Simulator
                 }
             }
 
-            return result.ToList();
+            return result;
         }
 
         // Thuật toán Round Robin
@@ -950,7 +948,8 @@ namespace Algorithm_Simulator
             }
 
             trBarQuantum.Enabled = true;
-            return result.ToList();
+            
+            return result;
         }
 
         private void DisplayProcessResult(Process p)
