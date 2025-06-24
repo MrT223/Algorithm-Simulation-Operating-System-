@@ -318,11 +318,6 @@ namespace Algorithm_Simulator
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            // Khóa trạng thái
-            btnAdd.Enabled = false;
-            btnDelete.Enabled = false;
-            btnTurnoff();
-
             // Kiểm tra thuật toán
             if (status == "none")
             {
@@ -341,6 +336,9 @@ namespace Algorithm_Simulator
             // Khóa trạng thái
             btnStart.Enabled = false;
             btnReset.Enabled = false;
+            btnAdd.Enabled = false;
+            btnDelete.Enabled = false;
+            btnTurnoff();
             Run(processes);
         }
 
